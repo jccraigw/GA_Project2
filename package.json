@@ -1,0 +1,29 @@
+{
+  "name": "ga_project2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jccraigw/GA_Project2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jccraigw/GA_Project2/issues"
+  },
+  "homepage": "https://github.com/jccraigw/GA_Project2#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.2",
+    "gulp-watch": "^4.3.11"
+  },
+  "dependencies": {
+    "express": "^4.15.3",
+    "hbs": "^4.0.1",
+    "mongoose": "^4.11.0"
+  }
+}
