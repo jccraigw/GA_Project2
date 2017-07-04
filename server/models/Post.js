@@ -4,7 +4,7 @@ var PostSchema = new mongoose.Schema({
 
     link: String,
     description: String,
-    comments: [{{type: mongoose.Schema.Types.ObjectId, ref: 'Comments'}}]
+    comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comments'}]
 
 });
 

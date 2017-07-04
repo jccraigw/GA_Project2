@@ -8,6 +8,11 @@ var express = require('express'),
 //connect to database
 require('./db/db.js');
 
+//connect to the model
+var User = require('./models/User.js');
+var Post = require('./models/Post.js');
+var Comment = require('./models/Comment.js');
+
 app.use(bodyParser.urlencoded({extended: true}));
 //make public folder static so that it can be accessed public
 app.use(express.static(path.join(__dirname, 'public')));
