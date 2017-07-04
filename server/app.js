@@ -42,7 +42,7 @@ app.use('/comment', CommentController);
 
 app.get('/', function(req, res){
 
-	res.send('Connected');
+	res.render('home');
 })
 
 server.listen(3000, function(){
