@@ -30,6 +30,16 @@ app.use(session({
 
 }));
 
+//connect to the controllers
+var UserController = require('./controllers/UserController');
+var PostController = require('./controllers/PostController');
+var CommentController = require('./controllers/CommentController');
+
+
+app.use('/', UserController);
+app.use('/post', PostController);
+app.use('/comment', CommentController);
+
 app.get('/', function(req, res){
 
 	res.send('Connected');
