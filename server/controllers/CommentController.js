@@ -38,6 +38,7 @@ router.delete('/:id', function(req, res){
 
 
 	var id = req.params.id;
+	var postId = req.body.postId;
 	Comment.findById(id, function(err, comment){
 
 		comment.remove();

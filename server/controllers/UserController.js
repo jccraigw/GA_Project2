@@ -24,9 +24,22 @@ router.get('/', function(req, res){
 
 })
 
+//get route to /profile/id which will render invididual users profile pages
+router.get('/profile/:id', function(req, res){
+
+	var id = req.params.id;
+
+	User.findById(id).populate({path : 'posts', model: 'Post' , populate :{path : 'comments', model: 'Comment' }}).exec(function(err, users){
+
+			res.json(users);
+	})
+
+
+})
+
 //post request to / (join page) that will add new users to the database
 //bcrypt password for security
-router.post('/', function(req, res){
+router.post('/join', function(req, res){
 
 	//print the request to the console
 	console.log(req.body);
@@ -49,7 +62,7 @@ router.post('/', function(req, res){
 		user.save();
 	})
 
-
+		//need redirect for after they click join button
 		res.send("success");
 })
 
