@@ -24,6 +24,8 @@ router.post('/', function(req, res){
 
 		user.posts.push(postId);
 		user.save();
+
+		//redirect here instead of json later
 		res.json(user);
 	})
 
