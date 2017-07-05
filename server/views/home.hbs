@@ -1,6 +1,12 @@
 <h1>Welcome!</h1>
-<ul>
-	{{#each users}}
-		<li>{{this.name}}</li>
-	{{/each}}
-</ul>
+
+	{{!-- static form submission --}}
+	<form id="login_form" action="/" method="POST">
+
+		<h4>{{error}}</h4>
+		<br>
+		<input name="email"placeholder="Email"/>
+		<input name="password" placeholder="Password"/>
+		<button>Submit</button>
+		<a href="/join">Join</a>
+	</form>

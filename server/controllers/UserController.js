@@ -12,26 +12,75 @@ router.use(bodyParser.urlencoded({extended: true}));
 router.get('/', function(req, res){
 
 	//display home page when user goes to localhost:3000/
-	//display a list of users on page
+	
 
-	User.find(function(err, users){
-
-		var allUsers = {users: users};
-
-		res.render('home', allUsers);
-	})
+		res.render('home');
 	
 
 })
 
+//get request the puts error on login page using /error route
+//
+router.get('/error', function(req, res){
+
+	var error_message = {error: "Incorrect Login Provided"};
+
+	res.render('home', error_message);
+})
+
+//get request to /logout
+//
+router.get('/logout', function(req, res){
+
+	req.session.loggedIn = false;
+	response.redirect('/');
+})
+
+
+//get request to the /join page that adds user to database
+router.get('/join', function(req, res){
+
+	res.render('join');
+})
+
+//get request to route/feed that renders food image feed page
+router.get('/feed', function(req, res){
+	//find the Users in the database and display there images on the feed
+	User.find(function(err, users){
+
+		var allUsers = {users: users}
+
+		if(req.session.loggedIn === true){
+
+			res.render('feed', allUsers);
+
+		}else{
+
+			res.redirect('/');
+		}
+		
+
+	})
+
+
+})
+
 //get route to /profile/id which will render invididual users profile pages
-router.get('/profile/:id', function(req, res){
+router.get('/:id', function(req, res){
 
 	var id = req.params.id;
 
-	User.findById(id).populate({path : 'posts', model: 'Post' , populate :{path : 'comments', model: 'Comment' }}).exec(function(err, users){
+	User.findById(id).populate({path : 'posts', model: 'Post' , populate :{path : 'comments', model: 'Comment' }}).exec(function(err, user){
 
-			res.json(users);
+			var user = {user: user};
+
+			if(req.session.loggedIn === true){
+				
+				res.render('profile', user);
+			}else{
+
+				res.redirect('/');
+			}
 	})
 
 
@@ -65,6 +114,39 @@ router.post('/join', function(req, res){
 		//need redirect for after they click join button
 		res.send("success");
 })
+
+//post request to / to check user login and confirm matches with database
+//1.find the user with the corresponding email address
+//2. check if the password on that user matches the password from the request (hashed)
+//check if there is a user that was returned from the DB
+//
+
+router.post('/', function(req, res){
+
+
+	User.findOne({email: req.body.email}, function(error, user){
+
+		if(user){
+			bcrypt.compare(req.body.password, user.password, function(err, match){
+
+				if(match === true){
+
+					req.session.loggedIn = true;
+
+					res.redirect('/feed');
+				}else{
+
+					res.redirect('/error');
+				}
+			})
+
+		}else{
+
+			res.redirect('/error');
+		}
+	})
+})
+
 
 //patch request to /:id (profile pages) that will update information in users profile
 router.patch('/:id', function(req, res){
