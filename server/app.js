@@ -40,10 +40,7 @@ app.use('/', UserController);
 app.use('/post', PostController);
 app.use('/comment', CommentController);
 
-app.get('/', function(req, res){
 
-	res.render('home');
-})
 
 server.listen(3000, function(){
 
