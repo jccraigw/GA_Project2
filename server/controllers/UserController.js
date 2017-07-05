@@ -24,9 +24,9 @@ router.get('/', function(req, res){
 
 })
 
-//post request to /join that will add new users to the database
+//post request to / (join page) that will add new users to the database
 //bcrypt password for security
-router.post('/join', function(req, res){
+router.post('/', function(req, res){
 
 	//print the request to the console
 	console.log(req.body);
@@ -41,7 +41,8 @@ router.post('/join', function(req, res){
     		password: hash,
     		title: req.body.title,
     		location: req.body.title,
-    		image: req.body.image,
+    		bio: req.body.bio,
+    		image: req.body.image
     		
 		})
 
@@ -50,6 +51,35 @@ router.post('/join', function(req, res){
 
 
 		res.send("success");
+})
+
+//patch request to /:id (profile pages) that will update information in users profile
+router.patch('/:id', function(req, res){
+
+	var id = req.params.id;
+
+	User.update({_id: id}, req.body, function(err, affected, res){
+
+
+	 		
+	 		console.log(res);
+	 	}
+
+	 )
+
+
+})
+
+//delete request to /:id(profile pages) that will delete a profile in the collection
+router.delete('/:id', function(req, res){
+
+
+	var id = req.params.id;
+	User.findById(id, function(err, users){
+
+		users.remove();
+		res.redirect('/');
+	})
 })
 
 module.exports = router;

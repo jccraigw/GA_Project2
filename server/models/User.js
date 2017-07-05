@@ -7,11 +7,14 @@ var UserSchema = new mongoose.Schema({
     password: String,
     title: String,
     location: String,
+    bio: String,
     image: String,
     friends: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
     posts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}]
 
 });
+
+
 
 var userModel = mongoose.model('User', UserSchema);
 
