@@ -15,7 +15,7 @@ router.post('/', function(req, res){
 	var postLink = req.body.link;
 	var postDesc = req.body.description;
 
-	var userId = request.body.userId;
+	var userId = req.body.userId;
 	User.findById(userId, function(err, user){
 
 		var post = new Post({link: postLink, description: postDesc});
@@ -29,9 +29,23 @@ router.post('/', function(req, res){
 
 })
 
+//delete request to/post/id that will remove the post from post array attached to user.
 router.delete('/:id', function(req, res){
 
+	var id = req.params.id;
+	Post.findById(id, function(err, post){
 
+		post.remove();
+		User.update({"posts": id},{"$pull": { "posts": id} }, function(err, affected, res){
+
+
+	 		res.send("success");
+	 		
+	 	}
+
+	 )
+		
+	})
 
 })
 
