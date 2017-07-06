@@ -2,19 +2,18 @@
   0% {
     background-image: url('../images/home-page1.jpg');
   }
-  30% {
+  25% {
     background-image: url('../images/home-page3.jpg');
   }
-  60% {
+  50% {
     background-image: url('../images/home-page1.jpg');
   }
-  90% {
+  75% {
     background-image: url('../images/home-page2.jpg');
   }
   100% {
     background-image: url('../images/home-page1.jpg');
   }
-  
 }
 body {
   background-image: url('../images/home-page1.jpg');
@@ -28,7 +27,6 @@ body {
 h1 {
   padding-top: 40px;
   font-family: 'Pontano Sans', sans-serif;
-  text-transform: uppercase;
 }
 h2 {
   padding-top: 20px;
@@ -82,8 +80,18 @@ h1,
 #image-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
 }
 .image {
   width: 250px;
   padding: 20px;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+}
+li {
+  padding-right: 1%;
 }
