@@ -1,12 +1,15 @@
-<h1>Welcome!</h1>
+<h1>Welcome to Puppygram</h1>
 
 	{{!-- static form submission --}}
 	<form id="login_form" action="/" method="POST">
 
 		<h4>{{error}}</h4>
 		<br>
+		<div id='login-form'>
 		<input name="email"placeholder="Email"/>
 		<input name="password" placeholder="Password"/>
-		<button>Submit</button>
+		<button class='login-button'>Login</button>
 		<a href="/join">Join</a>
+		</div>
+
 	</form>

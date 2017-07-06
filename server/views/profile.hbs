@@ -1,6 +1,15 @@
-<h1>Profile!</h1>
-<ul>
-	
+
+<h1>[Name]{{user.name}}</h1>
+
+
+<div id='user-info'>
+
+		<p>[Image]{{user.image}}</p>
+		<p>[Location]{{user.location}}</p>
+		<p>[Bio]{{user.bio}}</p>
+		<br>
+		{{!-- //add 2 buttons for 'adding' or 'removing' friends --}}
+
 		<li>{{user.name}}</li>
 
 		<form id="imgur">
@@ -24,4 +33,9 @@
 			</li>
 		{{/each}}
 		</ul>
-</ul>
+
+
+<div id='button-container'>
+<button class='profile-button'>Add</button>
+<button class='profile-button'>Unfriend</button>
+</div>
