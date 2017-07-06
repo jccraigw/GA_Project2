@@ -75,13 +75,13 @@ router.get('/:id', function(req, res){
 
 			var user = {user: user};
 
-			//if(req.session.loggedIn === true){
+			if(req.session.loggedIn === true){
 				
 				res.render('profile', user);
-			//}else{
+			}else{
 
-			//	res.redirect('/');
-			//}
+				res.redirect('/');
+			}
 	})
 
 
@@ -159,7 +159,7 @@ router.post('/:id/add', function(req, res){
 	var id = req.params.id;
 
 	//would use current id here to get the logged in user
-	User.findById(id, function(error, user){
+	User.findById(currentUserID, function(error, user){
 
 
 		user.friends.push(id);
@@ -191,7 +191,15 @@ router.patch('/:id', function(req, res){
 
 router.delete('/:id/remove', function(req, res){
 
-	 //check that im added them correctly first		
+
+	var id = req.params.id;
+	 //check that im added them correctly first	
+	 //would use current id here to get the logged in user
+	 User.update({"_id": currentUserID}, {$pull: {friends: id}}, {safe: true, multi:true}, function(err, obj){
+	 		//very useful console log and res send
+	 		console.log(err);
+	 		res.send(obj);
+	 })	
 
 
 

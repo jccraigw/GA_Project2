@@ -15,6 +15,7 @@ router.post('/', function(req, res){
 	var postLink = req.body.link;
 	var postDesc = req.body.description;
 
+	//grab userid from input field and hide
 	var userId = req.body.userId;
 	User.findById(userId, function(err, user){
 
