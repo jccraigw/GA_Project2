@@ -134,6 +134,7 @@ router.post('/', function(req, res){
 
 					req.session.loggedIn = true;
 					currentUserID = user._id;
+					console.log(currentUserID);
 
 					res.redirect('/feed');
 				}else{
