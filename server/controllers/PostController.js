@@ -38,13 +38,13 @@ router.patch('/:id', function(req, res){
 
 	var id = req.params.id;
 
-	Post.update({_id: id}, req.body, function(err, affected, res){
+	Post.update({_id: id}, req.body, function(err, affected){
 
 
 	 		
 	 		console.log(err);
 
-	 		//res.send(obj);
+	 		res.send("hi");
 	 	}
 
 	 )

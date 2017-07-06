@@ -3,6 +3,8 @@
 <h2>Because who doesn't love photos of cute puppies?</h2>
 
 {{!-- //need to double check join post method in controller --}}
+
+<div id='join-form-container'>
 <form id="join_form" action="/join" method="POST">
 
 		<h4>{{error}}</h4>
@@ -20,9 +22,17 @@
 		<br>
 		<input class='join_form' name="bio" placeholder="Bio"/>
 		<br>
-		<input class='join_form' name="image" placeholder="Image URL"/>
+		<input class='join_form' name="" placeholder="Upload image below"/>
+		<br>
+		<form class='join_form'>
+  			<br>
+  			<input type="file" class="imgur" accept="image/*" data-max-size="10000"/>
+		</form>
+
+
 		<br>
 		<button class='join-button'>Join</button>
 		</div>
 
 	</form>
+</div>
