@@ -32,16 +32,19 @@ router.post('/', function(req, res){
 
 })
 
+//patch request to /post/:id that will add description to post
 router.patch('/:id', function(req, res){
 
 
 	var id = req.params.id;
 
-	Post.update({_id: id}, req.body.description, function(err, affected, res){
+	Post.update({_id: id}, req.body, function(err, affected, res){
 
 
 	 		
-	 		console.log(res);
+	 		console.log(err);
+
+	 		//res.send(obj);
 	 	}
 
 	 )
