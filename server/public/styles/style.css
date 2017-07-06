@@ -26,13 +26,13 @@ body {
 }
 h1 {
   padding-top: 40px;
-	font-family: 'Pontano Sans', sans-serif;
+  font-family: 'Pontano Sans', sans-serif;
 }
-h2{
-	padding-top: 20px;
-	font-family: 'Pontano Sans', sans-serif;
-	margin: 0 auto;
-	text-align: center;
+h2 {
+  padding-top: 20px;
+  font-family: 'Pontano Sans', sans-serif;
+  margin: 0 auto;
+  text-align: center;
 }
 h1,
 #login-form {
@@ -44,49 +44,44 @@ h1,
   padding: 10px;
   font-family: 'Roboto', sans-serif;
 }
-#user-info{ //on profile page
-	margin: 0 auto;
-	text-align: center;
-	font-family: 'Roboto', sans-serif;
+#user-info {
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
-#button-container{
-	margin: 0 auto;
-	text-align: center;
+#button-container {
+  margin: 0 auto;
+  text-align: center;
 }
-.profile-button{
-	border-radius: 11px;
-  	font-family: 'Roboto', sans-serif;
-	color: #ffffff;
-  	font-size: 15px;
-	background: darkSalmon;
-	padding: 5px 10px 5px 10px;
-	text-decoration: none;
+.profile-button {
+  border-radius: 11px;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  font-size: 15px;
+  background: darkSalmon;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
 }
 #join-form {
-	margin: 0 auto;
-	text-align: center;
+  margin: 0 auto;
+  text-align: center;
 }
-.join-button, .login-button, .profile-button{
-	border-radius: 11px;
-  	font-family: 'Roboto', sans-serif;
-	color: #ffffff;
-  	font-size: 15px;
-	background: darkSalmon;
-	padding: 5px 10px 5px 10px;
-	text-decoration: none;
+.join-button,
+.login-button,
+.profile-button {
+  border-radius: 11px;
+  font-family: 'Roboto', sans-serif;
+  color: #ffffff;
+  font-size: 15px;
+  background: darkSalmon;
+  padding: 5px 10px 5px 10px;
+  text-decoration: none;
 }
 #image-container {
-	display: flex;
-	flex-direction: row;
-
+  display: flex;
+  flex-direction: row;
 }
 .image {
-	width: 250px;
-	padding: 20px;
+  width: 250px;
+  padding: 20px;
 }
-
-
-
-
-
-
