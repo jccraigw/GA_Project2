@@ -2,36 +2,19 @@
   0% {
     background-image: url('../images/home-page1.jpg');
   }
-  10% {
-    background-image: url('../images/home-page3.jpg');
-  }
-  20% {
-    background-image: url('../images/home-page1.jpg');
-  }
   30% {
-    background-image: url('../images/home-page2.jpg');
-  }
-  40% {
-    background-image: url('../images/home-page1.jpg');
-  }
-  50% {
     background-image: url('../images/home-page3.jpg');
   }
   60% {
     background-image: url('../images/home-page1.jpg');
   }
-  70% {
-    background-image: url('../images/home-page2.jpg');
-  }
-  80% {
-    background-image: url('../images/home-page1.jpg');
-  }
   90% {
-    background-image: url('../images/home-page3.jpg');
+    background-image: url('../images/home-page2.jpg');
   }
   100% {
     background-image: url('../images/home-page1.jpg');
   }
+  
 }
 body {
   background-image: url('../images/home-page1.jpg');

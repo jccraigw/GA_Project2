@@ -23,7 +23,7 @@ router.post('/', function(req, res){
 		post.save();
 		postId = post.id;
 
-		user.posts.push(postId);
+		user.post.push(postId);
 		user.save();
 
 		//redirect here instead of json later
