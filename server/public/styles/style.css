@@ -104,7 +104,8 @@ li {
   padding-right: 1%;
 }
 a {
-  color: white;
+  color: black;
+  margin-bottom: 5px;
 }
 .join-button {
   border-radius: 11px;
