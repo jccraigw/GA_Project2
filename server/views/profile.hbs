@@ -22,14 +22,14 @@
 				<img src="{{this.link}}" width="200" height="200">
 				{{!-- pull description from post collection --}}
 				<div class="descriptionBox">{{this.description}}</div>
-				<input id = "postId" value="{{this._id}}" type="" />
+				<input class = "postId" value="{{this._id}}" type="" />
 				{{!-- use static form to send patch request --}}
-				<form class="description">
-					<input id = "description" type="text" />
+				<form class="descr">
+					<input class="description" type="text" />
 				</form>
 				<button class="descriptionEdit_toggle">edit</button>
 				<button class="descriptionAdd_toggle">Add</button>
-
+				
 			</li>
 		{{/each}}
 		</ul>

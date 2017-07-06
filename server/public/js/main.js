@@ -72,10 +72,34 @@ $("document").ready(function() {
     }
   });
 
-  $('.description').hide();
-  $('.descriptionEdit_toggle').click(function(){
+  $('.descr').hide();
+  $('.descriptionAdd_toggle').hide();
+  $('.descriptionEdit_toggle').click(function(e){
+  		$(e.target).parent().find(".descr").toggle()
+  		  $(e.target).parent().find('.descriptionAdd_toggle').toggle();
+  		
+  		$('.descriptionAdd_toggle').click(function(){
 
-  		$('.description').toggle();
+  			 var postId = $(e.target).parent().find('.postId').val();
+  			 var description = $(e.target).parent().find('.description').val();
+
+  			 console.log(postId);
+  			 console.log(description);
+
+  			 var newDescription = {description: description};
+  			$.ajax({
+
+
+  				method: "PATCH",
+  				url: "http://localhost:3000/post/" + postId,
+  				data: newDescription,
+  				success: function(response){
+
+  					window.location.reload();
+  				}
+  			});
+
+  		})
   });
 
 });
