@@ -1,22 +1,29 @@
 
-<h1>[Name]{{user.name}}</h1>
+<h1>{{user.name}}</h1>
+<div id='button-container'>
+<button class='profile-button'>Add</button>
+<button class='profile-button'>Unfriend</button>
+</div>
 
 
 <div id='user-info'>
 
-		<p>[Image]{{user.image}}</p>
-		<p>[Location]{{user.location}}</p>
-		<p>[Bio]{{user.bio}}</p>
+		<p>{{user.image}}</p>
+		<p>Lives in {{user.location}}</p>
+		<p>{{user.bio}}</p>
 		<br>
-		{{!-- //add 2 buttons for 'adding' or 'removing' friends --}}
+		<h3>{{user.name}}'s Images</h3>
+</div>
 
-		<li>{{user.name}}</li>
 
 		<form id="imgur">
+  			{{user.name}}'s Images
+  			<br>
   			<input type="file" class="imgur" accept="image/*" data-max-size="5000"/>
+
   			<input id = "userId" value="{{user._id}}" type="" />
 		</form>
-		<ul>
+		<ul id='user-images'>
 		{{#each user.posts}}
 			<li>
 				<img src="{{this.link}}" width="200" height="200">
@@ -27,7 +34,7 @@
 				<form class="descr">
 					<input class="description" type="text" />
 				</form>
-				<button class="descriptionEdit_toggle">edit</button>
+				<button class="descriptionEdit_toggle">Edit</button>
 				<button class="descriptionAdd_toggle">Add</button>
 				<a href="http://localhost:3000/comment/{{this._id}}">Comments</a>
 
@@ -36,7 +43,3 @@
 		</ul>
 
 
-<div id='button-container'>
-<button class='profile-button'>Add</button>
-<button class='profile-button'>Unfriend</button>
-</div>
