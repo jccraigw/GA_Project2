@@ -1,4 +1,51 @@
-body{
-
-	background-color: red;
+@keyframes coverimage {
+	0% {background-image: url('../images/home-page1.jpg'); }
+	25% {background-image: url('../images/home-page2.jpg');}
+	50% {background-image: url('../images/home-page1.jpg');} //update image
+	75% {background-image: url('../images/home-page2.jpg');} //update image
+	100% {background-image: url('../images/home-page1.jpg');} //update image
 }
+
+body {
+  background-image: url('../images/home-page1.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 700px;
+  animation-name: coverimage;
+  animation-duration: 8s;
+
+}
+
+
+h1 {
+	padding-top: 40px;
+}
+
+h1, #login-form {
+	margin: 0 auto;
+	width: 100%;
+	text-align: center;
+
+}
+
+#login-form {
+	padding: 10px;
+	box-shadow: 0 0 5px rgba(0,0,0,.50);
+    color: #3b3a3a;
+}
+
+#profile-button {
+	
+}
+
+
+// #profile-stye {
+// 	background-color: green;
+// 	// background-image: url('../images/profile-page1.jpg');
+// 	// background-position: center center;
+// 	// background-repeat: no-repeat;
+// 	// background-size: cover;
+// 	// height: 700px;
+
+// }

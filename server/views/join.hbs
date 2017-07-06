@@ -1,1 +1,28 @@
-<h1>Join!</h1>
+<h1>Join Puppygram!</h1>
+
+<h2>Because who doesn't love photos of cute puppies?</h2>
+
+{{!-- //need to double check join post method in controller --}}
+<form id="join_form" action="/" method="POST">
+
+		<h4>{{error}}</h4>
+		<br>
+		<div id='join-form'>
+		<input class='join_form' name="email"placeholder="Email"/>
+		<br>
+		<input class='join_form' name="password" placeholder="Password"/>
+		<br>
+		<input class='join_form' name="name" placeholder="Full Name"/>
+		<br>
+		<input class='join_form' name="title" placeholder="Title"/>
+		<br>
+		<input class='join_form' name="location" placeholder="Location"/>
+		<br>
+		<input class='join_form' name="bio" placeholder="Bio"/>
+		<br>
+		<input class='join_form' name="image" placeholder="Image URL"/>
+		<br>
+		<button class='join-button'>Join</button>
+		</div>
+
+	</form>
