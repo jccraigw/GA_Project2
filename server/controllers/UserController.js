@@ -4,6 +4,7 @@ var User = require('../models/User');
 var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt');
 var session = require('express-session');
+var currentUserID;
 
 router.use(bodyParser.urlencoded({extended: true}));
 
@@ -74,13 +75,13 @@ router.get('/:id', function(req, res){
 
 			var user = {user: user};
 
-			if(req.session.loggedIn === true){
+			//if(req.session.loggedIn === true){
 				
 				res.render('profile', user);
-			}else{
+			//}else{
 
-				res.redirect('/');
-			}
+			//	res.redirect('/');
+			//}
 	})
 
 
@@ -132,6 +133,7 @@ router.post('/', function(req, res){
 				if(match === true){
 
 					req.session.loggedIn = true;
+					currentUserID = user._id;
 
 					res.redirect('/feed');
 				}else{
@@ -146,6 +148,24 @@ router.post('/', function(req, res){
 		}
 	})
 })
+
+//post request to /:id that adds friends to the friends array
+//
+router.post('/:id/add', function(req, res){
+
+
+	var id = req.params.id;
+
+	User.findById(currentUserID, function(error, user){
+
+		user.friends.push(id);
+		user.save();
+		//redirect user after this step and do just render json
+		res.json(user);
+
+	})
+})
+
 
 
 //patch request to /:id (profile pages) that will update information in users profile
