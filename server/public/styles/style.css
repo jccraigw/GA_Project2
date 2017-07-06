@@ -58,15 +58,16 @@ h1,
 }
 .image {
   width: 250px;
-  padding: 20px;
+  padding: 20 5 20 5;
 }
 ul {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   list-style: none;
 }
 li {
-  padding-right: 10%;
+  padding-right: 2%;
 }
 #profile-image {
   margin: 0 auto;
@@ -80,4 +81,5 @@ li {
 }
 #ul-feed {
   display: block;
+  list-style: show;
 }
