@@ -103,7 +103,7 @@ router.post('/join', function(req, res){
     		email: req.body.email,
     		password: hash,
     		title: req.body.title,
-    		location: req.body.title,
+    		location: req.body.location,
     		bio: req.body.bio,
     		image: req.body.image
     		
@@ -151,17 +151,20 @@ router.post('/', function(req, res){
 })
 
 //post request to /:id that adds friends to the friends array
-//
+
+//check that this is setup correctly
 router.post('/:id/add', function(req, res){
 
 
 	var id = req.params.id;
 
-	User.findById(currentUserID, function(error, user){
+	//would use current id here to get the logged in user
+	User.findById(id, function(error, user){
+
 
 		user.friends.push(id);
 		user.save();
-		//redirect user after this step and do just render json
+		//redirect user after this step not just render json
 		res.json(user);
 
 	})
@@ -182,6 +185,14 @@ router.patch('/:id', function(req, res){
 	 	}
 
 	 )
+
+
+})
+
+router.delete('/:id/remove', function(req, res){
+
+	 //check that im added them correctly first		
+
 
 
 })
