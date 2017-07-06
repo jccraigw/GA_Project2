@@ -23,7 +23,7 @@ router.post('/', function(req, res){
 		post.save();
 		postId = post.id;
 
-		user.post.push(postId);
+		user.posts.push(postId);
 		user.save();
 
 		//redirect here instead of json later
@@ -72,3 +72,5 @@ router.delete('/:id', function(req, res){
 })
 
 module.exports = router;
+
+

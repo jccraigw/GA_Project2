@@ -1,29 +1,29 @@
-@keyframes coverimage {
-  0% {
-    background-image: url('../images/home-page1.jpg');
-  }
-  25% {
-    background-image: url('../images/home-page3.jpg');
-  }
-  50% {
-    background-image: url('../images/home-page1.jpg');
-  }
-  75% {
-    background-image: url('../images/home-page2.jpg');
-  }
-  100% {
-    background-image: url('../images/home-page1.jpg');
-  }
-}
-body {
-  background-image: url('../images/home-page1.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 700px;
-  animation-name: coverimage;
-  animation-duration: 10s;
-}
+// @keyframes coverimage {
+//   0% {
+//     background-image: url('../images/home-page1.jpg');
+//   }
+//   25% {
+//     background-image: url('../images/home-page3.jpg');
+//   }
+//   50% {
+//     background-image: url('../images/home-page1.jpg');
+//   }
+//   75% {
+//     background-image: url('../images/home-page2.jpg');
+//   }
+//   100% {
+//     background-image: url('../images/home-page1.jpg');
+//   }
+// }
+// body {
+//   background-image: url('../images/home-page1.jpg');
+//   background-position: center center;
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   height: 750px;
+//   animation-name: coverimage;
+//   animation-duration: 10s;
+// }
 h1 {
   padding-top: 40px;
 	font-family: 'Pontano Sans', sans-serif;
@@ -52,6 +52,7 @@ h1,
 #button-container{
 	margin: 0 auto;
 	text-align: center;
+	padding-bottom: 50px;
 }
 .profile-button{
 	border-radius: 11px;
@@ -84,7 +85,28 @@ h1,
 	width: 250px;
 	padding: 20px;
 }
+ul {
+	display: flex;
+	flex-direction: row;
 
+
+}
+li {
+	padding-right: 10%;
+}
+#profile-image{ 
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+#imgur {
+	margin: 0 auto;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+}
+#ul-feed {
+	display: block;
+}
 
 
 

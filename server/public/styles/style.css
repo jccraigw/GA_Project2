@@ -1,34 +1,6 @@
-@keyframes coverimage {
-  0% {
-    background-image: url('../images/home-page1.jpg');
-  }
-  30% {
-    background-image: url('../images/home-page3.jpg');
-  }
-  60% {
-    background-image: url('../images/home-page1.jpg');
-  }
-  90% {
-    background-image: url('../images/home-page2.jpg');
-  }
-  100% {
-    background-image: url('../images/home-page1.jpg');
-  }
-  
-}
-body {
-  background-image: url('../images/home-page1.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 700px;
-  animation-name: coverimage;
-  animation-duration: 10s;
-}
 h1 {
   padding-top: 40px;
   font-family: 'Pontano Sans', sans-serif;
-  text-transform: uppercase;
 }
 h2 {
   padding-top: 20px;
@@ -54,6 +26,7 @@ h1,
 #button-container {
   margin: 0 auto;
   text-align: center;
+  padding-bottom: 50px;
 }
 .profile-button {
   border-radius: 11px;
@@ -86,4 +59,25 @@ h1,
 .image {
   width: 250px;
   padding: 20px;
+}
+ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+li {
+  padding-right: 10%;
+}
+#profile-image {
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+#imgur {
+  margin: 0 auto;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+#ul-feed {
+  display: block;
 }
