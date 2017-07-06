@@ -32,6 +32,22 @@ router.post('/', function(req, res){
 
 })
 
+router.patch('/:id', function(req, res){
+
+
+	var id = req.params.id;
+
+	Post.update({_id: id}, req.body.description, function(err, affected, res){
+
+
+	 		
+	 		console.log(res);
+	 	}
+
+	 )
+
+})
+
 //delete request to/post/id that will remove the post from post array attached to user.
 router.delete('/:id', function(req, res){
 

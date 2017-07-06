@@ -2,5 +2,14 @@
 <ul>
 	
 		<li>{{user.name}}</li>
-	
+
+		<form id="imgur">
+  			<input type="file" class="imgur" accept="image/*" data-max-size="5000"/>
+  			<input id = "userId" value="{{user._id}}" type="" />
+		</form>
+		<ul>
+		{{#each user.posts}}
+			<li><img src="{{this.link}}" width="200" height="200"></li>
+		{{/each}}
+		</ul>
 </ul>
