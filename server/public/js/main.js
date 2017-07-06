@@ -71,4 +71,12 @@ $("document").ready(function() {
 
     }
   });
+
+  $('.description').hide();
+  $('.descriptionEdit_toggle').click(function(){
+
+  		$('.description').toggle();
+  });
+
 });
+
