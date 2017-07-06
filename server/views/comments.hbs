@@ -1,0 +1,16 @@
+<h1>Comments</h1>
+
+<input id="postId_comment" value="{{post._id}}">
+<ul>
+	{{#each post.comments}}
+		
+		<li>{{text}}</li>
+
+	{{/each}}
+
+	<form action="/comment/{{post._id}}" method="POST">
+			<input name="text" placeholder="Type your comment here"style="width: 300px;"/>
+			<button>Submit</button>
+	</form>
+
+</ul>

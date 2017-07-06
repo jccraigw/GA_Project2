@@ -133,6 +133,7 @@ router.post('/', function(req, res){
 				if(match === true){
 
 					req.session.loggedIn = true;
+					req.session.Name = user.name;
 					currentUserID = user._id;
 					console.log(currentUserID);
 
