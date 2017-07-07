@@ -55,6 +55,7 @@ router.post('/:id/like', function(req, res){
 
 	var id = req.params.id;
 	var currentPost;
+	var diff = false;
 
 	Post.findById(id, function(err, post){
 
@@ -62,36 +63,47 @@ router.post('/:id/like', function(req, res){
 		
 		currentPost = post;
 
-		//console.log(currentPost);
+		console.log(currentPost);
 
 		//this will be req.session.userID
 		var userId = req.body.userId;
-		User.findById(userId, function(err, user){
+		User.findById(userId, function(err, users){
 
 			//console.log(user);
 			var i = 0;
-			user.likedPost.forEach(function(post){
+			users.likedPost.forEach(function(like){
 
-					//console.log("id: "+user.likedPost[i++]._id);
-					//console.log(post._id);
+					console.log("id: "+like._id);
+					console.log(id);
 
-				if(post.id === post.id){
+				if(id.toString() === like._id.toString()){
 
-					console.log("the same");
+					console.log("the same post");
+					diff = false;
 					
 				}
 				else{
-					post.likes += 1;
-					post.save();
-					user.likedPost.push(currentPost);
-					//console.log(err);
-	 				//res.send(obj);
-					user.save();
+
+					diff = true;
+					
 					
 
 				}
 
+
 			})
+
+				if(diff === true){
+					console.log('different post')
+					post.likes += 1;
+					post.save();
+					users.likedPost.push(post);
+					//console.log(err);
+	 				//res.send(obj);
+					users.save();
+					diff = false;
+				}
+
 			
 		})
 		

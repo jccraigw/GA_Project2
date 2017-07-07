@@ -27,6 +27,9 @@
 		{{#each user.posts}}
 			<li>
 				<img src="{{this.link}}" width="200" height="200">
+				<a class="likeicon" userId="<%= newUsers._id %>" onclink="updateLikes()">
+   <i class="fa fa-thumbs-o-up" aria-hidden="true" > 49 </i>
+</a>
 				{{!-- pull description from post collection --}}
 				<div class="descriptionBox">{{this.description}}</div>
 				<input class = "postId" value="{{this._id}}" type="" />
