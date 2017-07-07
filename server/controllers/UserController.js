@@ -70,9 +70,10 @@ router.get('/feed', function(req, res){
 router.get('/:id', function(req, res){
 
 	var id = req.params.id;
-
+	
 	User.findById(id).populate({path : 'posts', model: 'Post' , populate :{path : 'comments', model: 'Comment' }}).exec(function(err, user){
 
+			
 			if(id == currentUserID){
 
 				var isUser = true;
@@ -80,6 +81,7 @@ router.get('/:id', function(req, res){
 
 				var isUser = false;
 			}
+
 
 
 			var user = {user: user,
