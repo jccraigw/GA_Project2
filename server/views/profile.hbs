@@ -19,13 +19,8 @@
 		<p>{{user.bio}}</p>
 		<br>
 		<h3>{{user.name}}'s Images</h3>
-		<h3> friends</h3>
-		{{#each user.friends}}
-		<ul>
-			<li><a href="http://localhost:3000/{{this}}">{{this.name}}</li>
-
-		</ul>
-		{{/each}}
+		<a href="http://localhost:3000/{{user._id}}/friends">Friends</a>
+		
 </div>
 
 

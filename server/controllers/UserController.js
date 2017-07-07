@@ -66,7 +66,7 @@ router.get('/feed', function(req, res){
 
 })
 
-//get route to /profile/id which will render invididual users profile pages
+//get route to /id which will render invididual users profile pages
 router.get('/:id', function(req, res){
 
 	var id = req.params.id;
@@ -90,6 +90,40 @@ router.get('/:id', function(req, res){
 			if(req.session.loggedIn === true){
 				
 				res.render('profile', user);
+			}else{
+
+				res.redirect('/');
+			}
+	})
+
+
+})
+
+//get route to /id/friends which will render friends of user
+//get route to /id which will render invididual users profile pages
+router.get('/:id/friends', function(req, res){
+
+	var id = req.params.id;
+	
+	User.findById(id).populate({path : 'posts', model: 'Post' , populate :{path : 'comments', model: 'Comment' }}).populate('friends').exec(function(err, user){
+
+			
+			if(id == currentUserID){
+
+				var isUser = true;
+			}else{
+
+				var isUser = false;
+			}
+
+
+
+			var user = {user: user,
+					current: isUser};
+
+			if(req.session.loggedIn === true){
+				
+				res.render('friends', user);
 			}else{
 
 				res.redirect('/');
