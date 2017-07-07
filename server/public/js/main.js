@@ -102,5 +102,27 @@ $("document").ready(function() {
   		})
   });
 
+
+  //still holding postId value from previous click so able to click the other like button and it increases
+  //need to fix
+  $('.like').click(function(e){
+  		 var postId = $(e.target).parent().find('.postId').val();
+
+  		$.ajax({
+
+
+  			method: "POST",
+  			url: "http://localhost:3000/post/" + postId + "/like",
+  			success: function(response){
+
+  				window.location.reload();
+  			}
+
+  		})
+
+
+
+  })
+
 });
 

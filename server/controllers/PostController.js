@@ -50,6 +50,8 @@ router.patch('/:id', function(req, res){
 	 )
 
 })
+
+//post request to /post/:id/like that will like the photo and add to user liked photos array
 router.post('/:id/like', function(req, res){
 
 
@@ -66,7 +68,7 @@ router.post('/:id/like', function(req, res){
 		console.log(currentPost);
 
 		//this will be req.session.userID
-		var userId = req.body.userId;
+		var userId = req.session.userID.toString();
 		User.findById(userId, function(err, users){
 
 			//console.log(user);
@@ -76,7 +78,7 @@ router.post('/:id/like', function(req, res){
 					console.log("id: "+like._id);
 					console.log(id);
 
-				if(id.toString() === like._id.toString()){
+				if(id === like._id.toString()){
 
 					console.log("the same post");
 					diff = false;
