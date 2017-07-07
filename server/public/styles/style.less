@@ -1,34 +1,61 @@
+@nice-green: #ABCBBA;
+@button-color: #F3A482;
 
-// *{
-// 	box-sizing: border-box;
-// }
 
-// @keyframes coverimage {
-//   0% {
-//     background-image: url('../images/home-page1.jpg');
-//   }
-//   25% {
-//     background-image: url('../images/home-page3.jpg');
-//   }
-//   50% {
-//     background-image: url('../images/home-page1.jpg');
-//   }
-//   75% {
-//     background-image: url('../images/home-page2.jpg');
-//   }
-//   100% {
-//     background-image: url('../images/home-page1.jpg');
-//   }
-// }
-// body {
-//   background-image: url('../images/home-page1.jpg');
-//   background-position: center center;
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   height: 750px;
-//   animation-name: coverimage;
-//   animation-duration: 10s;
-// }
+*{
+	box-sizing: border-box;
+	font-family: 'Pontano Sans', sans-serif;
+
+}
+#feed-hbs {
+	background-color: @nice-green;
+	height: 1500px;
+	margin: 0;
+	padding: 0;
+}
+
+#comments-hbs {
+	background-color: @nice-green;
+	height: 1500px;
+	margin: 0;
+	padding: 0;
+}
+
+#profile-hbs {
+	background-color: @nice-green;
+	height: 1500px;
+	margin: 0;
+	padding: 0;
+}
+
+@keyframes coverimage {
+  0% {
+    background-image: url('../images/home-page1.jpg');
+  }
+  25% {
+    background-image: url('../images/home-page3.jpg');
+  }
+  50% {
+    background-image: url('../images/home-page1.jpg');
+  }
+  75% {
+    background-image: url('../images/home-page2.jpg');
+  }
+  100% {
+    background-image: url('../images/home-page1.jpg');
+  }
+}
+.layout-hbs {
+  background-image: url('../images/home-page1.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 750px;
+  animation-name: coverimage;
+  animation-duration: 10s;
+}
+
+
 
 h1 {
   padding-top: 40px;
@@ -40,6 +67,11 @@ h2{
 	font-family: 'Pontano Sans', sans-serif;
 	margin: 0 auto;
 	text-align: center;
+}
+h4{
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 30px;
 }
 h1,
 #login-form {
@@ -66,7 +98,7 @@ h1,
   	font-family: 'Roboto', sans-serif;
 	color: #ffffff;
   	font-size: 15px;
-	background: darkSalmon;
+	background: @button-color;
 	padding: 5px 10px 5px 10px;
 	text-decoration: none;
 }
@@ -79,7 +111,7 @@ h1,
   	font-family: 'Roboto', sans-serif;
 	color: #ffffff;
   	font-size: 15px;
-	background: darkSalmon;
+	background: @button-color;
 	padding: 5px 10px 5px 10px;
 	text-decoration: none;
 }
@@ -115,7 +147,7 @@ a {
   	font-family: 'Roboto', sans-serif;
 	color: #ffffff;
   	font-size: 15px;
-	background: darkSalmon;
+	background: @button-color;
 	padding: 5px 10px 5px 10px;
 	margin-top: 10px;
 }
@@ -139,14 +171,23 @@ li {
 #imgur {
 	margin: 0 auto;
 	text-align: center;
-	font-family: 'Roboto', sans-serif;
 }
 #ul-feed {
 	display: block;
 }
-// #profile-upload {
-// 	float: right;
-// }
+#feed-images {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	list-style: none;
+}
+
+#logout {
+	width: 100%;
+	text-align: right;
+	font-family: 'Pontano Sans', sans-serif;
+	padding: 20px;
+}
 
 
 

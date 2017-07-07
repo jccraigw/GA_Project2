@@ -1,6 +1,14 @@
+<body id='feed-hbs'>
 <h1>Puppygram Feed!</h1>
-<ul id='ul-feed'>
+<ul id='feed-images'>
 	{{#each users}}
-		<li><a href="http://localhost:3000/{{this._id}}">{{this.name}}</a></li>
+		<li><a href="http://localhost:3000/{{this._id}}">{{this.posts}}</a></li>
+
+
 	{{/each}}
+
 </ul>
+</body>
+
+
+	

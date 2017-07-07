@@ -24,7 +24,7 @@ router.get('/', function(req, res){
 //
 router.get('/error', function(req, res){
 
-	var error_message = {error: "Incorrect Login Provided"};
+	var error_message = {error: "Incorrect Login Provided. Please try again."};
 
 	res.render('home', error_message);
 })
@@ -34,7 +34,7 @@ router.get('/error', function(req, res){
 router.get('/logout', function(req, res){
 
 	req.session.loggedIn = false;
-	response.redirect('/');
+	res.redirect('/');
 })
 
 
@@ -49,7 +49,7 @@ router.get('/feed', function(req, res){
 	//find the Users in the database and display there images on the feed
 	User.find(function(err, users){
 
-		var allUsers = {users: users}
+		var allUsers = {users: users, loggedIn: req.session.loggedIn}
 
 		if(req.session.loggedIn === true){
 
@@ -81,9 +81,15 @@ router.get('/:id', function(req, res){
 				isUser = true;
 			}
 
+
 			//console.log("isUser " + isUser);
-			var user = {user: user,
+		
+
+			var user = {user: user, 
+					loggedIn: req.session.loggedIn,
+
 						current: isUser};
+
 
 			if(req.session.loggedIn === true){
 				
@@ -158,7 +164,7 @@ router.post('/join', function(req, res){
 	})
 
 		//need redirect for after they click join button
-		res.send("success");
+		res.redirect('home');
 })
 
 //post request to / to check user login and confirm matches with database
