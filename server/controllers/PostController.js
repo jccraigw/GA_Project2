@@ -19,7 +19,7 @@ router.post('/', function(req, res){
 	var userId = req.body.userId;
 	User.findById(userId, function(err, user){
 
-		var post = new Post({link: postLink, description: postDesc});
+		var post = new Post({link: postLink, description: postDesc, likes : 0});
 		post.save();
 		postId = post.id;
 
@@ -49,6 +49,20 @@ router.patch('/:id', function(req, res){
 
 	 )
 
+})
+router.post('/:id/like', function(req, res){
+
+
+	var id = req.params.id;
+
+	Post.findById(id, function(err, post){
+
+
+		post.likes += 1;
+		post.save();
+		res.send("success");
+
+	})
 })
 
 //delete request to/post/id that will remove the post from post array attached to user.
