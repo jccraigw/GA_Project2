@@ -70,20 +70,18 @@ router.get('/feed', function(req, res){
 router.get('/:id', function(req, res){
 
 	var id = req.params.id;
+	var isUser = false;
 	
 	User.findById(id).populate({path : 'posts', model: 'Post' , populate :{path : 'comments', model: 'Comment' }}).populate('friends').exec(function(err, user){
 
-			
+			//console.log(id);
+			//console.log(currentUserID);
 			if(id == currentUserID){
-
-				var isUser = true;
-			}else{
-
-				var isUser = false;
+				//console.log('got here')
+				isUser = true;
 			}
 
-
-
+			//console.log("isUser " + isUser);
 			var user = {user: user,
 						current: isUser};
 

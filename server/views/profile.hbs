@@ -41,13 +41,17 @@
 				<div class="descriptionBox">{{this.description}}</div>
 				<input class = "postId" value="{{this._id}}" type="" />
 				{{!-- use static form to send patch request --}}
-				<form class="descr">
-					<input class="description" type="text" />
-				</form>
-				<button class="descriptionEdit_toggle">Edit</button>
-				<button class="descriptionAdd_toggle">Add</button>
-				<a href="http://localhost:3000/comment/{{this._id}}">Comments</a>
-
+				
+				{{#if ../current}}
+					<form class="descr">
+						<input class="description" type="text" />
+					</form>
+					<button class="descriptionEdit_toggle">Edit</button>
+					<button class="descriptionAdd_toggle">Add</button>
+					<a href="http://localhost:3000/comment/{{this._id}}">Comment</a>
+				{{else}}
+					<a href="http://localhost:3000/comment/{{this._id}}">Comment</a>
+				{{/if}}
 			</li>
 		{{/each}}
 		</ul>
