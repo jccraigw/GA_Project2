@@ -71,7 +71,7 @@ router.get('/:id', function(req, res){
 
 	var id = req.params.id;
 	
-	User.findById(id).populate({path : 'posts', model: 'Post' , populate :{path : 'comments', model: 'Comment' }}).exec(function(err, user){
+	User.findById(id).populate({path : 'posts', model: 'Post' , populate :{path : 'comments', model: 'Comment' }}).populate('friends').exec(function(err, user){
 
 			
 			if(id == currentUserID){
