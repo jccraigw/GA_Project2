@@ -23,14 +23,17 @@
 		
 </div>
 
-
-		<form id="imgur">
+		{{#if current}}
+			<form id="imgur">
   			{{user.name}}'s Images
   			<br>
   			<input type="file" class="imgur" accept="image/*" data-max-size="5000"/>
 
-  			<input id = "userId" value="{{user._id}}" type="" />
+  			<input id = "userId" value="{{user._id}}" type="hidden" />
 		</form>
+		{{else}}
+	
+		{{/if}}
 		<ul id='user-images'>
 		{{#each user.posts}}
 			<li>
@@ -39,7 +42,7 @@
 				<span>{{this.likes}}</span>
 				{{!-- pull description from post collection --}}
 				<div class="descriptionBox">{{this.description}}</div>
-				<input class = "postId" value="{{this._id}}" type="" />
+				<input class = "postId" value="{{this._id}}" type="hidden" />
 				{{!-- use static form to send patch request --}}
 				
 				{{#if ../current}}
