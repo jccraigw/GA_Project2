@@ -160,13 +160,26 @@ router.post('/:id/add', function(req, res){
 
 
 	var id = req.params.id;
-
+	var newFriend = true;
 	//would use current id here to get the logged in user
 	User.findById(currentUserID, function(error, user){
 
 
-		user.friends.push(id);
-		user.save();
+		user.friends.forEach(function(like){
+
+			if(id === like.toString()){
+
+					newFriend = false;
+			}
+				
+		})
+
+			if(newFriend){
+
+				user.friends.push(id);
+				user.save();
+			}
+	
 		//redirect user after this step not just render json
 		res.json(user);
 
@@ -191,7 +204,7 @@ router.patch('/:id', function(req, res){
 
 
 })
-
+//delete request to remove user from friends list
 router.delete('/:id/remove', function(req, res){
 
 

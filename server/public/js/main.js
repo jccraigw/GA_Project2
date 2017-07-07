@@ -125,5 +125,23 @@ $("document").ready(function() {
 
   })
 
+  $('#add').click(function(e){
+
+  		var userId = $('#userId').val();
+
+  		$.ajax({
+
+
+  			method: "POST",
+  			url: "http://localhost:3000/" + userId + "/add",
+  			success: function(response){
+
+  				window.location.reload();
+  			}
+  		})
+
+
+  })
+
 });
 

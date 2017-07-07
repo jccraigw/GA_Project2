@@ -65,7 +65,7 @@ router.post('/:id/like', function(req, res){
 		
 		currentPost = post;
 
-		console.log(currentPost);
+		//console.log(currentPost);
 
 		//this will be req.session.userID
 		var userId = req.session.userID.toString();
@@ -75,12 +75,12 @@ router.post('/:id/like', function(req, res){
 			var i = 0;
 			users.likedPost.forEach(function(like){
 
-					console.log("id: "+like._id);
-					console.log(id);
+					//console.log("id: "+like._id);
+					//console.log(id);
 
 				if(id === like._id.toString()){
 
-					console.log("the same post");
+					//console.log("the same post");
 					diff = false;
 					
 				}
@@ -89,7 +89,7 @@ router.post('/:id/like', function(req, res){
 			})
 
 				if(diff === true){
-					console.log('different post')
+					//console.log('different post')
 					post.likes += 1;
 					post.save();
 					users.likedPost.push(post);

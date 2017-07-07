@@ -1,6 +1,6 @@
 <h1>Puppygram Feed!</h1>
 <ul id='ul-feed'>
 	{{#each users}}
-		<li>{{this.name}}</li>
+		<li><a href="http://localhost:3000/{{this._id}}">{{this.name}}</a></li>
 	{{/each}}
 </ul>
