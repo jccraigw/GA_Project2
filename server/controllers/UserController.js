@@ -34,7 +34,7 @@ router.get('/error', function(req, res){
 router.get('/logout', function(req, res){
 
 	req.session.loggedIn = false;
-	response.redirect('/');
+	res.redirect('/');
 })
 
 
@@ -49,7 +49,7 @@ router.get('/feed', function(req, res){
 	//find the Users in the database and display there images on the feed
 	User.find(function(err, users){
 
-		var allUsers = {users: users}
+		var allUsers = {users: users, loggedIn: req.session.loggedIn}
 
 		if(req.session.loggedIn === true){
 
@@ -73,7 +73,7 @@ router.get('/:id', function(req, res){
 
 	User.findById(id).populate({path : 'posts', model: 'Post' , populate :{path : 'comments', model: 'Comment' }}).exec(function(err, user){
 
-			var user = {user: user};
+			var user = {user: user, loggedIn: req.session.loggedIn};
 
 			if(req.session.loggedIn === true){
 				

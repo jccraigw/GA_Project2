@@ -112,3 +112,12 @@ li {
 #ul-feed {
   display: block;
 }
+#feed-images {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  list-style: none;
+}
+#feed-images li {
+  padding-right: 2%;
+}

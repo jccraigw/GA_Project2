@@ -10,6 +10,11 @@
 
 </head>
 <body>
+	{{#if loggedIn}}
+		<div style='width: 100%; text-align: right'>
+			<a href='/logout'>Logout</a>
+		</div>
+	{{/if}}
 	{{{body}}}
 <script src="/js/main.js"></script>
 </body>
