@@ -114,7 +114,7 @@ router.post('/join', function(req, res){
 	})
 
 		//need redirect for after they click join button
-		res.send("success");
+		res.redirect('home');
 })
 
 //post request to / to check user login and confirm matches with database
