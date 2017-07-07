@@ -2,7 +2,12 @@
 <h1>Puppygram Feed!</h1>
 <ul id='feed-images'>
 	{{#each users}}
-		<li><a href="http://localhost:3000/{{this._id}}">{{this.posts}}</a></li>
+		<li><a href="http://localhost:3000/{{this._id}}">
+	{{!-- 	<img src='{{posts.link}}'></a></li> --}}
+		{{#each this.posts}}
+			<img src='{{this.link}}'/>
+		{{/each}}
+
 
 
 	{{/each}}
