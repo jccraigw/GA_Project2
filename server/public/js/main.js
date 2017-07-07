@@ -152,6 +152,13 @@ $("document").ready(function() {
 
   	$.ajax({
 
+  		method: "DELETE",
+  		url: "http://localhost:3000/" + userId + "/remove",
+  		success: function(response){
+
+  			window.location.reload();
+  		}
+
 
 
 
