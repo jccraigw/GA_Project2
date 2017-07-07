@@ -24,7 +24,7 @@ router.get('/', function(req, res){
 //
 router.get('/error', function(req, res){
 
-	var error_message = {error: "Incorrect Login Provided"};
+	var error_message = {error: "Incorrect Login Provided. Please try again."};
 
 	res.render('home', error_message);
 })

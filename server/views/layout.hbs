@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class='layout-hbs'>
 <head>
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="/styles/style.css">
@@ -11,7 +11,7 @@
 </head>
 <body>
 	{{#if loggedIn}}
-		<div style='width: 100%; text-align: right'>
+		<div id='logout'>
 			<a href='/logout'>Logout</a>
 		</div>
 	{{/if}}
