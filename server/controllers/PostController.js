@@ -57,7 +57,7 @@ router.post('/:id/like', function(req, res){
 
 	var id = req.params.id;
 	var currentPost;
-	var diff = false;
+	var diff = true;
 
 	Post.findById(id, function(err, post){
 
@@ -84,14 +84,7 @@ router.post('/:id/like', function(req, res){
 					diff = false;
 					
 				}
-				else{
-
-					diff = true;
-					
-					
-
-				}
-
+				
 
 			})
 

@@ -114,8 +114,9 @@ $("document").ready(function() {
   			method: "POST",
   			url: "http://localhost:3000/post/" + postId + "/like",
   			success: function(response){
-
+  				var postId ="";
   				window.location.reload();
+  				
   			}
 
   		})
