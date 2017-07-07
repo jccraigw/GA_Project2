@@ -243,11 +243,12 @@ router.patch('/:id', function(req, res){
 
 	var id = req.params.id;
 
-	User.update({_id: id}, req.body, function(err, affected, res){
+	User.update({_id: id}, req.body, function(err, affected){
 
 
 	 		
 	 		console.log(res);
+	 		res.send("success");
 	 	}
 
 	 )
