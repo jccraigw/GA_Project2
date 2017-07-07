@@ -1,0 +1,8 @@
+<h1>Friends!</h1>
+
+{{#each user.friends}}
+		<ul>
+			<li><a href="http://localhost:3000/{{this._id}}">{{this.name}}</li>
+
+		</ul>
+{{/each}}

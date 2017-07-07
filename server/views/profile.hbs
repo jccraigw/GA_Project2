@@ -1,9 +1,15 @@
 <body id='profile-hbs'>
 <h1>{{user.name}}</h1>
-<div id='button-container'>
-<button id="add" class='profile-button'>Add</button>
-<button id="remove" class='profile-button'>Unfriend</button>
-</div>
+{{#if current}}
+{{else}}
+	<div id='button-container'>
+
+			<button id="add" class='profile-button'>Add</button>
+			<button id="remove" class='profile-button'>Unfriend</button>
+
+	</div>
+{{/if}}
+
 
 
 <div id='user-info'>
@@ -12,16 +18,29 @@
 		<p>Lives in {{user.location}}</p>
 		<p>{{user.bio}}</p>
 		<br>
+
+		<h3>{{user.name}}'s Images</h3>
+		<a href="http://localhost:3000/{{user._id}}/friends">Friends</a>
+		
 </div>
+
+		{{#if current}}
+			<form id="imgur">
+  			{{user.name}}'s Images
+
 
 
 		<form id="imgur">
   			<h3>{{user.name}}'s Images<h3>
+
   			<br>
   			<input type="file" class="imgur" accept="image/*" data-max-size="5000"/>
 
-  			<input id = "userId" value="{{user._id}}" type="" />
+  			<input id = "userId" value="{{user._id}}" type="hidden" />
 		</form>
+		{{else}}
+	
+		{{/if}}
 		<ul id='user-images'>
 		{{#each user.posts}}
 			<li>
@@ -30,15 +49,19 @@
 				<span>{{this.likes}}</span>
 				{{!-- pull description from post collection --}}
 				<div class="descriptionBox">{{this.description}}</div>
-				<input class = "postId" value="{{this._id}}" type="" />
+				<input class = "postId" value="{{this._id}}" type="hidden" />
 				{{!-- use static form to send patch request --}}
-				<form class="descr">
-					<input class="description" type="text" />
-				</form>
-				<button class="descriptionEdit_toggle">Edit</button>
-				<button class="descriptionAdd_toggle">Add</button>
-				<a href="http://localhost:3000/comment/{{this._id}}">Comments</a>
-
+				
+				{{#if ../current}}
+					<form class="descr">
+						<input class="description" type="text" />
+					</form>
+					<button class="descriptionEdit_toggle">Edit</button>
+					<button class="descriptionAdd_toggle">Add</button>
+					<a href="http://localhost:3000/comment/{{this._id}}">Comment</a>
+				{{else}}
+					<a href="http://localhost:3000/comment/{{this._id}}">Comment</a>
+				{{/if}}
 			</li>
 		{{/each}}
 		</ul>
