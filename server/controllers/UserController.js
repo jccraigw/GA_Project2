@@ -73,7 +73,17 @@ router.get('/:id', function(req, res){
 
 	User.findById(id).populate({path : 'posts', model: 'Post' , populate :{path : 'comments', model: 'Comment' }}).exec(function(err, user){
 
-			var user = {user: user};
+			if(id == currentUserID){
+
+				var isUser = true;
+			}else{
+
+				var isUser = false;
+			}
+
+
+			var user = {user: user,
+						current: isUser};
 
 			if(req.session.loggedIn === true){
 				

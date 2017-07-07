@@ -1,9 +1,13 @@
 
 <h1>{{user.name}}</h1>
-<div id='button-container'>
-<button id="add" class='profile-button'>Add</button>
-<button id="remove" class='profile-button'>Unfriend</button>
-</div>
+{{#if current}}
+{{else}}
+	<div id='button-container'>
+		<button id="add" class='profile-button'>Add</button>
+		<button id="remove" class='profile-button'>Unfriend</button>
+	</div>
+{{/if}}
+
 
 
 <div id='user-info'>
