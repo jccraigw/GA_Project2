@@ -1,13 +1,15 @@
 <body id='feed-hbs'>
-<h1>Puppygram Feed!</h1>
-<ul id='feed-images'>
+<h1 id='puppy-gram-title'>Puppygram Feed!</h1>
+<ul id='feed-container'>
 	{{#each users}}
 		<li><a href="http://localhost:3000/{{this._id}}">
 	{{!-- 	<img src='{{posts.link}}'></a></li> --}}
+		<div id='feed-images'>
 		{{#each this.posts}}
-			<img src='{{this.link}}'/>
+			<img src='{{this.link}}' width="200" height="200"/>
+			
 		{{/each}}
-
+		</div>
 
 
 	{{/each}}
