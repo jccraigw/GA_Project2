@@ -77,6 +77,7 @@ $("document").ready(function() {
   $('.descr').hide();
   $('.descriptionAdd_toggle').hide();
   $('.descriptionEdit_toggle').click(function(e){
+  			e.preventDefault();
   		$(e.target).parent().find(".descr").toggle()
   		  $(e.target).parent().find('.descriptionAdd_toggle').toggle();
   		
