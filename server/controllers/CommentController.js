@@ -42,6 +42,7 @@ router.post('/:id', function(req, res){
 		commentId = comment.id;
 
 		post.comments.push(commentId);
+		
 		post.save();
 
 		//redirect here instead of json later

@@ -10,7 +10,8 @@ var UserSchema = new mongoose.Schema({
     bio: String,
     image: String,
     friends: [{type: mongoose.Schema.Types.ObjectId, ref: 'User'}],
-    posts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}]
+    posts: [{type: mongoose.Schema.Types.ObjectId, ref: 'Post'}],
+    likedPost: Array
 
 });
 

@@ -54,14 +54,48 @@ router.post('/:id/like', function(req, res){
 
 
 	var id = req.params.id;
+	var currentPost;
 
 	Post.findById(id, function(err, post){
 
 
-		post.likes += 1;
-		post.save();
-		res.send("success");
+		
+		currentPost = post;
 
+		//console.log(currentPost);
+
+		//this will be req.session.userID
+		var userId = req.body.userId;
+		User.findById(userId, function(err, user){
+
+			//console.log(user);
+			var i = 0;
+			user.likedPost.forEach(function(post){
+
+					//console.log("id: "+user.likedPost[i++]._id);
+					//console.log(post._id);
+
+				if(post.id === post.id){
+
+					console.log("the same");
+					
+				}
+				else{
+					post.likes += 1;
+					post.save();
+					user.likedPost.push(currentPost);
+					//console.log(err);
+	 				//res.send(obj);
+					user.save();
+					
+
+				}
+
+			})
+			
+		})
+		
+			res.send("success");
 	})
 })
 

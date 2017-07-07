@@ -105,7 +105,8 @@ router.post('/join', function(req, res){
     		title: req.body.title,
     		location: req.body.location,
     		bio: req.body.bio,
-    		image: req.body.image
+    		image: req.body.image,
+    		likedPost: req.body.liked
     		
 		})
 
@@ -134,6 +135,7 @@ router.post('/', function(req, res){
 
 					req.session.loggedIn = true;
 					req.session.Name = user.name;
+					req.session.userID = user._id;
 					currentUserID = user._id;
 					console.log(currentUserID);
 
