@@ -4,6 +4,7 @@ var imageUpload;
 
 $("document").ready(function() {
 
+	//image upload process
   $('input[type=file]').on("change", function() {
 
     var $files = $(this).get(0).files;
@@ -72,6 +73,7 @@ $("document").ready(function() {
     }
   });
 
+  	//description add process
   $('.descr').hide();
   $('.descriptionAdd_toggle').hide();
   $('.descriptionEdit_toggle').click(function(e){
@@ -125,6 +127,7 @@ $("document").ready(function() {
 
   })
 
+  //add user to the friends array
   $('#add').click(function(e){
 
   		var userId = $('#userId').val();
@@ -140,6 +143,19 @@ $("document").ready(function() {
   			}
   		})
 
+
+  })
+  //remove user from the friends array
+  $('#remove').click(function(e){
+
+  	var userId = $('#userId').val();
+
+  	$.ajax({
+
+
+
+
+  	})
 
   })
 
