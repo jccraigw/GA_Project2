@@ -5,11 +5,29 @@ var imageUpload;
 $("document").ready(function() {
 	$('#profileImage').hide();
 
+
 	$('#gear').click(function(e){
 
 		$('#profileImage').click();
 
 	});
+
+$(".nav-dropdown").on("click", function(event){
+  event.preventDefault();
+
+  $("nav a").toggle();
+});
+
+// function navToggle() {
+//     var x = document.getElementById('nav-dropdown');
+//     if(req.session.loggedIn === true){
+//         x.style.display = 'block';
+//     } else {
+//         x.style.display = 'none';
+//     }
+// }
+
+
 
 		//profileimage upload process
   $('#profileImage').on("change", function() {
@@ -244,4 +262,7 @@ $("document").ready(function() {
   })
 
 });
+
+
+
 
