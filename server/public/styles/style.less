@@ -188,8 +188,55 @@ li {
 	font-family: 'Pontano Sans', sans-serif;
 	padding: 20px;
 }
+// css example
+span {
+  content: "\2699";
+  font-size: 24px;
+ 
+}
+.profile_wrapper{
+
+	display: flex;
+	flex-direction: row;
 
 
+}
+.profile_image{
+
+	 position: relative;
+
+}
+.gear_background{
+
+	position: absolute;
+	 margin-left: 100px;
+	 background-image: url('../images/corner.png');
+	   -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+	 width: 100px;
+	 height: 100px;
+	 opacity: .8;
+	 display: none;
+}
+.profile_gear{
+
+
+	 position: absolute;
+	 margin-top: -5px;
+	 margin-left: 60px;
+	
+	
+}
+.profile_image:hover +.gear_background{
+
+	display: block;
+}
+.gear_background:hover{
+
+	display: block;
+}
 
 
 

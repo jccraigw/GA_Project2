@@ -14,13 +14,25 @@
 
 <div id='user-info'>
 
-		<p><img src="{{user.image}}" width="200" height="200"></p>	
-		<form class='join_form'>
-  			<br>
-  			<a id='upload-text'>Upload Profile Picture: 
-  			<input id='profileImage' type="file" class="imgur" accept="image/*" data-max-size="10000"/>
-		</form>
-
+		<div class="profile_wrapper">
+			<div class="profile_image">
+				<img src="{{user.image}}" width="200" height="200">	
+			</div>
+			
+			<div class="gear_background">
+				<div class="profile_gear">
+					{{#if current}}
+						<form class='join_form'>
+				  			<br>
+				  			{{!-- <a id='upload-text'>Upload Profile Picture: --}} 
+				  			<input id='profileImage' type="file" class="imgur" accept="image/*" data-max-size="10000"/>
+						</form>
+						<span id="gear">&#9881;</span>
+					{{else}}
+					{{/if}}
+				</div>
+			</div>
+		</div>
 		<p>Lives in {{user.location}}</p>
 		<p>{{user.bio}}</p>
 		<br>

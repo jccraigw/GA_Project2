@@ -247,7 +247,7 @@ router.patch('/:id', function(req, res){
 
 
 	 		
-	 		console.log(res);
+	 		//console.log(res);
 	 		res.send("success");
 	 	}
 

@@ -3,7 +3,13 @@ console.log("main.js connected!")
 var imageUpload;
 
 $("document").ready(function() {
+	$('#profileImage').hide();
 
+	$('#gear').click(function(e){
+
+		$('#profileImage').click();
+
+	});
 
 		//profileimage upload process
   $('#profileImage').on("change", function() {
