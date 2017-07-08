@@ -27,12 +27,13 @@
 
 
 	{{#if loggedIn}}
-		<div class='nav-dropdown'>
-			<a href="/feed">Feed</a> {{!-- //need to update to send to user profile --}}
-			<a href="/+{{user._id}}">Profile</a> {{!-- //need to update to send to user profile --}}
-			<a href='/logout'>Logout</a>
+		<a href="#" class="hamburger nav-dropdown" title="Open Navigation"><img src='../images/hamburger.png' style="width: 20px; height: 20px;"/></a>
+		<nav class='nav-dropdown'>
+			<li><a href="/feed">Feed</a></li>{{!-- //need to update to send to user profile --}}
+			<li><a href="/+{{user._id}}">Profile</a></li> {{!-- //need to update to send to user profile --}}
+			<li><a href='/logout'>Logout</a></li> 
 
-		</div>
+		</nav>
 	{{/if}}
 	{{{body}}}
 <script src="/js/main.js"></script>

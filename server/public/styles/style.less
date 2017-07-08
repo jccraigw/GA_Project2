@@ -1,4 +1,4 @@
-@nice-green: #ABCBBA;
+@nice-green: #161B43;
 @button-color: #F3A482;
 
 
@@ -6,6 +6,55 @@
 	box-sizing: border-box;
 	font-family: 'Pontano Sans', sans-serif;
 
+}
+nav {
+  text-align: right;
+}
+
+.hamburger {
+  display: none;
+  width: 35px;
+  height: 35px;
+  // background-image: url(../images/hamburger.png);
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+nav {
+  text-align: right;
+}
+
+.nav-dropdown {
+  float: right;
+  display: inline;
+}
+
+nav li {
+  float: left;
+  padding: 20px;
+  text-align: center;
+  list-style: none;
+}
+
+nav a {
+/*  display: block;
+  padding: 20px 15px;*/
+  padding: 10px;
+
+}
+
+nav a:hover {
+  color: #F98E81;
+}
+
+.js-navigation {
+  float: right;
+  display: inline;
 }
 #feed-hbs {
 	background-color: @nice-green;
@@ -30,23 +79,20 @@
 
 @keyframes coverimage {
   0% {
-    background-image: url('../images/home-page1.jpg');
+    background-image: url('../images/home1.jpg');
   }
   25% {
-    background-image: url('../images/home-page3.jpg');
+    background-image: url('../images/home2.jpg');
   }
-  50% {
-    background-image: url('../images/home-page1.jpg');
-  }
-  75% {
-    background-image: url('../images/home-page2.jpg');
+  % {
+    background-image: url('../images/home3.jpg');
   }
   100% {
-    background-image: url('../images/home-page1.jpg');
+    background-image: url('../images/home5.jpg');
   }
 }
 .layout-hbs {
-  background-image: url('../images/home-page1.jpg');
+  background-image: url('../images/home1.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -60,6 +106,7 @@
 h1 {
   padding-top: 40px;
 	font-family: 'Pontano Sans', sans-serif;
+	color: white;
 }
 h2{
 	padding-top: 20px;
@@ -68,11 +115,15 @@ h2{
 	margin: 0 auto;
 	text-align: center;
 }
+h3 {
+	color: white;
+}
 h4{
 	margin: 0 auto;
 	text-align: center;
 	padding-top: 30px;
 }
+
 h1,
 #login-form {
   margin: 0 auto;
@@ -139,9 +190,11 @@ li{
 	padding-right: 1%;
 }
 a {
-	color: black;
+	color: white;
 	margin-bottom: 5px;
+
 }
+
 .join-button {
 	border-radius: 11px;
   	font-family: 'Roboto', sans-serif;
@@ -184,7 +237,7 @@ li a {
 	width: 100%;
 }
 
-#logout {
+.nav-dropdown {
 	width: 100%;
 	text-align: right;
 	font-family: 'Pontano Sans', sans-serif;
@@ -204,3 +257,37 @@ li a {
 
 
 
+@media screen and (max-width: 1020px) {
+  header {
+    padding: 20px;
+  }
+
+  h1 {
+    float: none;
+    margin-top: 0;
+    text-align: left;
+  }
+
+  nav {
+    display: none;
+    float: none;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  nav li {
+    display: none;
+    float: none;
+    padding: 15px;
+  }
+
+  nav a {
+    padding: 0;
+    font-size: 22px;
+    line-height: 22px;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}

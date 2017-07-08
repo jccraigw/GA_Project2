@@ -4,10 +4,20 @@ var imageUpload;
 
 $("document").ready(function() {
 
-// $(".nav-dropdown").on("click", function(event){
-//   event.preventDefault();
-//   $(".nav-dropdown a").toggle();
-// });
+$(".nav-dropdown").on("click", function(event){
+  event.preventDefault();
+
+  $("nav a").toggle();
+});
+
+// function navToggle() {
+//     var x = document.getElementById('nav-dropdown');
+//     if(req.session.loggedIn === true){
+//         x.style.display = 'block';
+//     } else {
+//         x.style.display = 'none';
+//     }
+// }
 
 
 		//profileimage upload process
