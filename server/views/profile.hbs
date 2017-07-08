@@ -14,7 +14,13 @@
 
 <div id='user-info'>
 
-		<p>{{user.image}}</p>
+		<p><img src="{{user.image}}" width="200" height="200"></p>	
+		<form class='join_form'>
+  			<br>
+  			<a id='upload-text'>Upload Profile Picture: 
+  			<input id='profileImage' type="file" class="imgur" accept="image/*" data-max-size="10000"/>
+		</form>
+
 		<p>Lives in {{user.location}}</p>
 		<p>{{user.bio}}</p>
 		<br>
@@ -33,7 +39,7 @@
   			<h3>{{user.name}}'s Images<h3>
 
   			<br>
-  			<input type="file" class="imgur" accept="image/*" data-max-size="5000"/>
+  			<input id="uploadPost" type="file" class="imgur" accept="image/*" data-max-size="5000"/>
 
   			<input id = "userId" value="{{user._id}}" type="hidden" />
 		</form>

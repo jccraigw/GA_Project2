@@ -42,7 +42,7 @@ router.patch('/:id', function(req, res){
 
 
 	 		
-	 		console.log(err);
+	 		//console.log(err);
 
 	 		res.send("hi");
 	 	}
