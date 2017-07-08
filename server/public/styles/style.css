@@ -6,9 +6,9 @@ nav {
   text-align: right;
 }
 .hamburger {
-  display: none;
   width: 35px;
   height: 35px;
+  background-image: url(../images/hamburger.png);
   background-size: 35px 35px;
   background-repeat: no-repeat;
   text-indent: -9999px;
@@ -62,16 +62,16 @@ nav a:hover {
 }
 @keyframes coverimage {
   0% {
-    background-image: url('../images/home-page1.jpg');
-  }
-  25% {
     background-image: url('../images/home1.jpg');
   }
-  50% {
+  25% {
     background-image: url('../images/home2.jpg');
   }
-  75% {
+  50% {
     background-image: url('../images/home3.jpg');
+  }
+  75% {
+    background-image: url('../images/home2.jpg');
   }
   100% {
     background-image: url('../images/home5.jpg');

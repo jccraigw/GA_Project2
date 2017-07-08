@@ -12,8 +12,8 @@ $("document").ready(function() {
 
 	});
 
-$(".nav-dropdown").on("click", function(event){
-  event.preventDefault();
+$(".hamburger").on("click", function(event){
+  //event.preventDefault();
 
   $("nav a").toggle();
 });

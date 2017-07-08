@@ -1,4 +1,16 @@
 <body id='feed-hbs'>
+	
+		<div class="hamburger" title="Open Navigation"><img src='../images/hamburger.png' style="width: 20px; height: 20px;"/></div>
+		<nav class='nav-dropdown'>
+
+			<li><a href="http://localhost:3000/feed">Feed</a></li>{{!-- //need to update to send to user profile --}}
+			<li><a href="http://localhost:3000/{{userid}}">Profile</a></li> {{!-- //need to update to send to user profile --}}
+			<li><a href='http://localhost:3000/logout'>Logout</a></li> 
+
+		</nav>
+		
+
+
 <h1 id='puppy-gram-title'>Wanderlyst Feed!</h1>
 
 <ul id='feed-container'>

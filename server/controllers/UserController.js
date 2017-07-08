@@ -49,7 +49,7 @@ router.get('/feed', function(req, res){
 	//find the Users in the database and display there images on the feed
 	User.find().populate('posts').exec(function(err, users){
 
-		var allUsers = {users: users, loggedIn: req.session.loggedIn}
+		var allUsers = {users: users, loggedIn: req.session.loggedIn, userid: req.session.userID }
 
 		if(req.session.loggedIn === true){
 
