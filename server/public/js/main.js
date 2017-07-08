@@ -4,6 +4,11 @@ var imageUpload;
 
 $("document").ready(function() {
 
+// $(".nav-dropdown").on("click", function(event){
+//   event.preventDefault();
+//   $(".nav-dropdown a").toggle();
+// });
+
 
 		//profileimage upload process
   $('#profileImage').on("change", function() {
@@ -238,4 +243,7 @@ $("document").ready(function() {
   })
 
 });
+
+
+
 

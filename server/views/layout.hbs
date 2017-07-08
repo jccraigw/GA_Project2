@@ -27,8 +27,11 @@
 
 
 	{{#if loggedIn}}
-		<div id='logout'>
+		<div class='nav-dropdown'>
+			<a href="/feed">Feed</a> {{!-- //need to update to send to user profile --}}
+			<a href="/+{{user._id}}">Profile</a> {{!-- //need to update to send to user profile --}}
 			<a href='/logout'>Logout</a>
+
 		</div>
 	{{/if}}
 	{{{body}}}
