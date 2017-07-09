@@ -32,10 +32,27 @@
 		
 			{{#each posts}}
 				<div class="feedPost_wrapper">
-					<div class="feedPost_name">{{../name}}</div>
+					
+						<div class="feedPost_img">
+							<img src="{{../image}}"> 
+						</div>
+						
+						<div class="feedPost_name"> 
+							{{../name}}
+							
+							</div>
 				</div>
-					<img src='{{link}}' width="200" height="200" />
-				
+					<img class="feed_post" src='{{link}}' width="200" height="200" />
+
+						<div class="feedPost_wrapper_description">
+					
+						
+						
+						<div class="feedPost_name"> 
+							<p>{{description}}  </p>
+							
+							</div>
+				</div>
 			{{/each}}
 		{{!-- </div> --}}
 		

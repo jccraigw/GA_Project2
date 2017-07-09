@@ -47,7 +47,7 @@ router.get('/join', function(req, res){
 //get request to route/feed that renders food image feed page
 router.get('/feed', function(req, res){
 	//find the Users in the database and display there images on the feed
-	User.find().populate('posts').exec(function(err, users){
+	User.find().populate('posts').populate('comments').exec(function(err, users){
 
 		var allUsers = {users: users, loggedIn: req.session.loggedIn, userid: req.session.userID }
 
