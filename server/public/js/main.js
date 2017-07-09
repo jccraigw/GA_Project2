@@ -5,6 +5,19 @@ var imageUpload;
 $("document").ready(function() {
 	//hide profile image button uploader
 	$('#profileImage').hide();
+	$('.descriptionEdit_toggle').hide();
+	$('.image_post').hover(function(e){
+
+		$('.descriptionEdit_toggle').show();
+	}, function(e){
+
+		$('.descriptionEdit_toggle').hide();
+	});
+
+	$('.descriptionEdit_toggle').hover(function(e){
+
+		$('.descriptionEdit_toggle').show();
+	});
 
 	//default toggled up
 	$("nav a").toggle();
