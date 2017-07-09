@@ -438,6 +438,7 @@ span {
   padding-top: 10%;
 }
 #profilePic {
+  border-radius: 50%;
   margin-right: 50px;
 }
 #friends_pic {
