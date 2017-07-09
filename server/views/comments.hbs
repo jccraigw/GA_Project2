@@ -14,7 +14,16 @@
 
 		</nav>
 
+<div id='comment-container'>
 <input id="postId_comment" value="{{post._id}}" type="hidden">
+
+
+
+
+	<form action="/comment/{{post._id}}" method="POST">
+			<input name="text" placeholder="Type your comment here"style="width: 300px;"/>
+			<button>Submit</button>
+	</form>
 <ul>
 	{{#each post.comments}}
 		
@@ -22,10 +31,7 @@
 
 	{{/each}}
 
-	<form action="/comment/{{post._id}}" method="POST">
-			<input name="text" placeholder="Type your comment here"style="width: 300px;"/>
-			<button>Submit</button>
-	</form>
-
 </ul>
+</div>
+
 </div>
