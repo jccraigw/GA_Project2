@@ -6,6 +6,9 @@ $("document").ready(function() {
 	//hide profile image button uploader
 	$('#profileImage').hide();
 
+	//default toggled up
+	$("nav a").toggle();
+
 	//on click of gear icon click image button uploader
 	$('#gear').click(function(e){
 
@@ -19,9 +22,14 @@ $(".hamburger").on("click", function(event){
   $("nav a").toggle();
 });
 
-//on double click of image trigger like button click
-$(".image_post").dblclick(function(){
+$("nav a").on("click", function(e){
 
+	$("nav a").toggle();
+})
+
+//on double click of image trigger like button click
+$(".image_post").dblclick(function(e){
+		e.preventDefault()
 		$('.like').click();
 })
 

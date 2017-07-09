@@ -1,16 +1,17 @@
-<h1>Join Wanderlyst, yo.</h1>
+<div class="layout-hbs">
+<h1>Join Wanderlyst</h1>
 
-<h2>Because it's never too late to get your travel on.</h2>
+<h2>Share your desire to travel</h2>
 
 {{!-- //need to double check join post method in controller --}}
 
 <div id='join-form-container'>
-<form id="join_form" action="/join" method="POST">
+<form id="join_form" action="/join" method="POST" >
 
 		<h4>{{error}}</h4>
 		<br>
 		<div id='join-form'>
-		<input class='join_form' name="email"placeholder="Email"/>
+		<input class='join_form' name="email"placeholder="Email" />
 		<br>
 		<input class='join_form' name="password" placeholder="Password"/>
 		<br>
@@ -30,4 +31,6 @@
 		</div>
 
 	</form>
+</div>
+
 </div>
