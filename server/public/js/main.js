@@ -7,11 +7,25 @@ $("document").ready(function() {
 	$('#profileImage').hide();
 	$('.descriptionEdit_toggle').hide();
 	$('#uploadPost').hide();
+	$('.gear_background').hide();
 
 	$('#upload').click(function(e){
 		e.preventDefault()
 		$('#uploadPost').click();
 
+	});
+
+	$('.profile_image').hover(function(e){
+
+		$('.gear_background').show();
+	}, function(e){
+			$('.gear_background').hide();
+
+	})
+
+	$('.gear_background').hover(function(e){
+
+		$('.gear_background').show();
 	});
 
 	$('.image_post').hover(function(e){

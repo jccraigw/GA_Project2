@@ -251,18 +251,11 @@ span {
   width: 100px;
   height: 100px;
   opacity: .8;
-  display: none;
 }
 .profile_gear {
   position: absolute;
   margin-top: -5px;
   margin-left: 60px;
-}
-.profile_image:hover + .gear_background {
-  display: block;
-}
-.gear_background:hover {
-  display: block;
 }
 #puppy-gram-title {
   padding-bottom: 0px;
@@ -445,7 +438,6 @@ span {
   padding-top: 10%;
 }
 #profilePic {
-  border-radius: 50%;
   margin-right: 50px;
 }
 #friends_pic {
