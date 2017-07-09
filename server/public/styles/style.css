@@ -314,6 +314,13 @@ span {
   margin-left: 70px;
   font-size: 24px;
 }
+.like_num2 {
+  font-size: 24px;
+  color: white;
+}
+.descriptionBox {
+  color: white;
+}
 .nav_wrapper {
   position: fixed;
   /* Set the navbar to fixed position */

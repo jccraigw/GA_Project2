@@ -71,6 +71,9 @@ router.get('/:id', function(req, res){
 
 	var id = req.params.id;
 	var isUser = false;
+	var currentID;
+	req.session.Current = false;
+
 	
 	User.findById(id).populate({path : 'posts', model: 'Post' , populate :{path : 'comments', model: 'Comment' }}).populate('friends').exec(function(err, user){
 
@@ -79,10 +82,18 @@ router.get('/:id', function(req, res){
 			if(id == currentUserID){
 				//console.log('got here')
 				isUser = true;
+				req.session.Current = true;
+				currentID = currentUserID;
+				//console.log('id: '+id);
+				//console.log('usri: '+ currentUserID)
+			}else if(id = currentID){
+				req.session.Current = true;
+
 			}
+			
 
 
-			//console.log("isUser " + isUser);
+			//console.log('sess: '+req.session.Current);
 		
 
 			var user = {user: user, 
@@ -116,9 +127,11 @@ router.get('/:id/friends', function(req, res){
 			if(id == currentUserID){
 
 				var isUser = true;
+				req.session.Current = true;
 			}else{
 
 				var isUser = false;
+				req.session.Current = false;
 			}
 
 
@@ -189,6 +202,7 @@ router.post('/', function(req, res){
 					req.session.Name = user.name;
 					req.session.userID = user._id;
 					currentUserID = user._id;
+					req.session.Current = true;
 					console.log(currentUserID);
 
 					res.redirect('/feed');

@@ -76,7 +76,7 @@
 		<ul id='user-images'>
 		{{#each user.posts}}
 			<li>
-				
+				<a href="http://localhost:3000/post/{{this._id}}">
 				<div class="post_wrapper">
 					<img class="image_post" src="{{this.link}}" width="200" height="200">
 				</div>
@@ -84,9 +84,9 @@
 				<button class="like">Like</button>
 				<span class="like_num">{{this.likes}}</span>
 
-
+				</a>
 				{{!-- pull description from post collection --}}
-				<div class="descriptionBox">{{this.description}}</div>
+				
 				<input class = "postId" value="{{this._id}}" type="hidden" />
 				{{!-- use static form to send patch request --}}
 				
@@ -96,9 +96,9 @@
 					</form>
 					<button class="descriptionEdit_toggle">Edit</button>
 					<button class="descriptionAdd_toggle">Add</button>
-					<a href="http://localhost:3000/comment/{{this._id}}">Comment</a>
+					
 				{{else}}
-					<a href="http://localhost:3000/comment/{{this._id}}">Comment</a>
+					
 				{{/if}}
 			</li>
 		{{/each}}

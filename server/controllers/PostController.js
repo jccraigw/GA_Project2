@@ -9,6 +9,21 @@ router.use(bodyParser.urlencoded({extended: true}));
 
 //CRUD routes below
 
+//get request to /post that grabs the post to edit
+router.get('/:id', function(req, res){
+
+	var id = req.params.id;
+	Post.findById(id, function(err, post){
+
+		//console.log(req.session.Current);
+		var post = {post: post, current: req.session.Current}
+		res.render('post', post);
+		
+	})
+
+	
+})
+
 //post request to /post that grabs the text from the requet body and saves it as a new post
 router.post('/', function(req, res){
 
@@ -99,10 +114,10 @@ router.post('/:id/like', function(req, res){
 					diff = false;
 				}
 
-			
+			res.send("success");
 		})
 		
-			res.send("success");
+			
 	})
 })
 
