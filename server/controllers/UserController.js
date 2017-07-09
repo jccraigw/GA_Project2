@@ -88,7 +88,8 @@ router.get('/:id', function(req, res){
 			var user = {user: user, 
 					loggedIn: req.session.loggedIn,
 
-						current: isUser};
+						current: isUser, 
+						userid: req.session.userID };
 
 
 			if(req.session.loggedIn === true){
@@ -123,7 +124,8 @@ router.get('/:id/friends', function(req, res){
 
 
 			var user = {user: user,
-					current: isUser};
+					current: isUser,
+				 userid: req.session.userID };
 
 			if(req.session.loggedIn === true){
 				

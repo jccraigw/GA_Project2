@@ -3,29 +3,27 @@ console.log("main.js connected!")
 var imageUpload;
 
 $("document").ready(function() {
+	//hide profile image button uploader
 	$('#profileImage').hide();
 
-
+	//on click of gear icon click image button uploader
 	$('#gear').click(function(e){
 
 		$('#profileImage').click();
 
 	});
-
+//navigation icon button
 $(".hamburger").on("click", function(event){
   //event.preventDefault();
 
   $("nav a").toggle();
 });
 
-// function navToggle() {
-//     var x = document.getElementById('nav-dropdown');
-//     if(req.session.loggedIn === true){
-//         x.style.display = 'block';
-//     } else {
-//         x.style.display = 'none';
-//     }
-// }
+//on double click of image trigger like button click
+$(".image_post").dblclick(function(){
+
+		$('.like').click();
+})
 
 
 

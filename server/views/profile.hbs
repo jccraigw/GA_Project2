@@ -1,4 +1,16 @@
 <body id='profile-hbs'>
+
+		<div class="hamburger" title="Open Navigation"><img src='../images/hamburger.png' style="width: 20px; height: 20px;"/></div>
+		<nav class='nav-dropdown'>
+
+			<li><a href="http://localhost:3000/feed">Feed</a></li>{{!-- //need to update to send to user profile --}}
+			{{#if current}}
+			{{else}}
+			<li><a href="http://localhost:3000/{{userid}}">Profile</a></li> 
+			{{/if}}
+			<li><a href='http://localhost:3000/logout'>Logout</a></li> 
+
+		</nav>
 <h1>{{user.name}}</h1>
 {{#if current}}
 {{else}}
@@ -18,10 +30,10 @@
 			<div class="profile_image">
 				<img src="{{user.image}}" width="200" height="200">	
 			</div>
-			
+			{{#if current}}
 			<div class="gear_background">
 				<div class="profile_gear">
-					{{#if current}}
+					
 						<form class='join_form'>
 				  			<br>
 				  			{{!-- <a id='upload-text'>Upload Profile Picture: --}} 
@@ -61,7 +73,8 @@
 		<ul id='user-images'>
 		{{#each user.posts}}
 			<li>
-				<img src="{{this.link}}" width="200" height="200">
+			
+				<img class="image_post" src="{{this.link}}" width="200" height="200">
 				<button class="like">Like</button>
 				<span>{{this.likes}}</span>
 				{{!-- pull description from post collection --}}

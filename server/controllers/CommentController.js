@@ -17,7 +17,8 @@ router.get('/:id', function(req, res){
 
 		console.log(post.comments.text);
 
-		var post = {post: post};
+		var post = {post: post, 
+		 userid: req.session.userID };
 		
 		res.render('comments', post);
 

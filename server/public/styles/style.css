@@ -295,3 +295,16 @@ span {
     display: block;
   }
 }
+.like {
+  display: none;
+}
+.imagePost_wrapper {
+  display: flex;
+  flex-direction: row;
+}
+.image_wrapper {
+  position: relative;
+}
+.like_wrapper {
+  position: absolute;
+}

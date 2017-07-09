@@ -1,5 +1,13 @@
 <h1>Friends!</h1>
 
+		<div class="hamburger" title="Open Navigation"><img src='../images/hamburger.png' style="width: 20px; height: 20px;"/></div>
+		<nav class='nav-dropdown'>
+
+			<li><a href="http://localhost:3000/feed">Feed</a></li>{{!-- //need to update to send to user profile --}}
+			<li><a href="http://localhost:3000/{{userid}}">Profile</a></li> {{!-- //need to update to send to user profile --}}
+			<li><a href='http://localhost:3000/logout'>Logout</a></li> 
+
+		</nav>
 {{#each user.friends}}
 		<ul>
 			<li><a href="http://localhost:3000/{{this._id}}">{{this.name}}</li>
