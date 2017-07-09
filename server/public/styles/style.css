@@ -24,6 +24,9 @@ body {
   top: 20px;
   right: 20px;
 }
+#friends-link {
+  margin: 0 auto;
+}
 nav {
   text-align: right;
 }
@@ -65,6 +68,9 @@ nav a:hover {
 #friends-hbs {
   background-color: #161B43;
 }
+.friends-list ul li {
+  color: white;
+}
 @keyframes coverimage {
   0% {
     background-image: url('../images/home1.jpg');
@@ -95,6 +101,7 @@ h1 {
   padding-top: 40px;
   font-family: 'Pontano Sans', sans-serif;
   color: white;
+  padding-bottom: 20px;
 }
 h2 {
   padding-top: 20px;
@@ -162,10 +169,6 @@ h1,
 .image {
   width: 250px;
   padding: 20px;
-}
-ul {
-  display: flex;
-  flex-direction: row;
 }
 #user-images {
   display: flex;
@@ -268,8 +271,9 @@ span {
 .gear_background:hover {
   display: block;
 }
-#friends-link {
-  margin: 0 auto;
+.friends-link {
+  float: left;
+  width: 100%;
 }
 #puppy-gram-title {
   text-align: left;
@@ -297,6 +301,7 @@ span {
   h1 {
     float: none;
     margin-top: 0;
+    padding-bottom: 20px;
   }
   nav {
     float: none;
@@ -312,6 +317,9 @@ span {
     font-size: 22px;
     line-height: 22px;
   }
+  .friends-link {
+    margin: 0 auto;
+  }
   #bio-wrapper {
     display: flex;
     flex-direction: column;
@@ -319,9 +327,6 @@ span {
     text-align: left;
     padding-left: 10px;
     font-size: 10px;
-  }
-  #profile_image {
-    padding-right: 10px;
   }
   .hamburger {
     display: block;
@@ -433,4 +438,21 @@ span {
   display: flex;
   flex-direction: row;
   border-top: 1px solid black;
+}
+#comment-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+#comment-container ul li {
+  list-style-type: none;
+}
+#post-me {
+  margin: 0 auto;
+  width: 100%;
+  padding-left: 40%;
+  padding-top: 10%;
 }
