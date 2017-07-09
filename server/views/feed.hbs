@@ -22,21 +22,27 @@
 
 
 
-<ul id='feed-container'>
+<div id='feed-container'>
 	{{#each users}}
-		<li><a href="http://localhost:3000/{{this._id}}">
+		
+		<a href="http://localhost:3000/{{this._id}}">
+		
 	{{!-- 	<img src='{{posts.link}}'></a></li> --}}
-		<div id='feed-images'>
-		{{#each this.posts}}
-			<img src='{{this.link}}' width="200" height="200"/>
-			
-		{{/each}}
-		</div>
-
+		{{!-- <div id='feed-images'> --}}
+		
+			{{#each posts}}
+				<div class="feedPost_wrapper">
+					<div class="feedPost_name">{{../name}}</div>
+				</div>
+					<img src='{{link}}' width="200" height="200" />
+				
+			{{/each}}
+		{{!-- </div> --}}
+		
 
 	{{/each}}
 
-</ul>
+</div>
 </body>
 
 
