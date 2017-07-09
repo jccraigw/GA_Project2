@@ -61,6 +61,7 @@ nav a:hover {
 }
 #profile-hbs {
   background-color: #161B43;
+  width: 100%;
 }
 #friends-hbs {
   background-color: #161B43;
@@ -174,7 +175,8 @@ ul {
   list-style: none;
 }
 li {
-  padding-right: 1%;
+  padding-right: 2px;
+  padding-bottom: 2px;
 }
 a {
   color: white;
@@ -338,7 +340,7 @@ span {
 }
 .like_num {
   position: absolute;
-  margin-top: -200px;
+  margin-top: -180px;
   margin-left: 70px;
   font-size: 24px;
 }
@@ -433,4 +435,23 @@ span {
   display: flex;
   flex-direction: row;
   border-top: 1px solid black;
+}
+.edit_wrapper {
+  position: absolute;
+  margin-top: -190px;
+  margin-left: 20px;
+}
+.user-images_wrapper {
+  width: 100%;
+}
+#user-images {
+  /* Prevent vertical gaps */
+  line-height: 0;
+  -webkit-column-count: 5;
+  -webkit-column-gap: 0px;
+  -moz-column-count: 5;
+  -moz-column-gap: 0px;
+  column-count: 5;
+  column-gap: 0px;
+  margin: 0 auto;
 }

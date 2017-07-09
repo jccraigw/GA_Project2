@@ -5,6 +5,27 @@ var imageUpload;
 $("document").ready(function() {
 	//hide profile image button uploader
 	$('#profileImage').hide();
+	$('.descriptionEdit_toggle').hide();
+	$('#uploadPost').hide();
+
+	$('#upload').click(function(e){
+		e.preventDefault()
+		$('#uploadPost').click();
+
+	});
+
+	$('.image_post').hover(function(e){
+
+		$('.descriptionEdit_toggle').show();
+	}, function(e){
+
+		$('.descriptionEdit_toggle').hide();
+	});
+
+	$('.descriptionEdit_toggle').hover(function(e){
+
+		$('.descriptionEdit_toggle').show();
+	});
 
 	//default toggled up
 	$("nav a").toggle();

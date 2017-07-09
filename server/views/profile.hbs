@@ -77,15 +77,18 @@
 
   			<br>
   			<input id="uploadPost" type="file" class="imgur" accept="image/*" data-max-size="5000"/>
-
+  			<button id="upload">Upload</button>
   			<input id = "userId" value="{{user._id}}" type="hidden" />
 		</form>
 		{{else}}
 	
 		{{/if}}
+		<div class="user-images_wrapper">
 		<ul id='user-images'>
+		
 		{{#each user.posts}}
 			<li>
+				<div class="postImage_wrapper">
 				<a href="http://localhost:3000/post/{{this._id}}">
 				<div class="post_wrapper">
 					<img class="image_post" src="{{this.link}}" width="200" height="200">
@@ -95,23 +98,29 @@
 				<span class="like_num">{{this.likes}}</span>
 
 				</a>
+
+				</div>
 				{{!-- pull description from post collection --}}
 				
-				<input class = "postId" value="{{this._id}}" type="hidden" />
+				
 				{{!-- use static form to send patch request --}}
 				
 				{{#if ../current}}
-					<form class="descr">
-						<input class="description" type="text" />
-					</form>
-					<button class="descriptionEdit_toggle">Edit</button>
-					<button class="descriptionAdd_toggle">Add</button>
-					
+					<div class="edit_wrapper">
+						<form class="descr">
+							<input class="description" type="text" />
+						</form>
+						<button class="descriptionEdit_toggle">Edit</button>
+						<input class = "postId" value="{{this._id}}" type="hidden" />
+						<button class="descriptionAdd_toggle">Add</button>
+
+					</div>
 				{{else}}
 					
 				{{/if}}
 			</li>
 		{{/each}}
-		</ul>
 
+		</ul>
+		</div>
 </div>
