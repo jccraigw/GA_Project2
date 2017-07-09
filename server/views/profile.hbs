@@ -15,6 +15,9 @@
 
 		</nav>
 <h1>{{user.name}}</h1>
+	<div class='friends-link'>
+	
+	</div>
 {{#if current}}
 {{else}}
 	<div id='button-container'>
@@ -33,6 +36,14 @@
 			<div class="profile_image">
 				<img src="{{user.image}}" width="200" height="200">	
 			</div>
+			<div id='bio-wrapper'>
+			<br>
+			<p>Lives in {{user.location}}</p>
+
+			<p>{{user.bio}}</p>
+
+			<a href="http://localhost:3000/{{user._id}}/friends">Friends</a>
+			</div>
 			{{#if current}}
 			<div class="gear_background">
 				<div class="profile_gear">
@@ -48,12 +59,11 @@
 				</div>
 			</div>
 		</div>
-		<p>Lives in {{user.location}}</p>
-		<p>{{user.bio}}</p>
+		
 		<br>
 
 	
-		<a href="http://localhost:3000/{{user._id}}/friends">Friends</a>
+		
 		
 </div>
 

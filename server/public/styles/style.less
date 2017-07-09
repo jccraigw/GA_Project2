@@ -34,6 +34,12 @@ body{
    
 }
 
+#friends-link{
+  	margin: 0 auto;
+  }
+
+
+
 nav {
   text-align: right;
 }
@@ -91,9 +97,11 @@ nav a:hover {
 #friends-hbs {
 	background-color: @nice-green;
 	
-	
-	
   
+}
+
+.friends-list ul li {
+	color: white;
 }
 @keyframes coverimage {
  0% {
@@ -222,6 +230,12 @@ a {
 
 }
 
+p {
+	color: white;
+}
+
+
+
 .join-button {
 	border-radius: 11px;
   	font-family: 'Roboto', sans-serif;
@@ -277,9 +291,11 @@ span {
  
 }
 .profile_wrapper{
-
+	margin: 0 auto;
+	text-align: center;
 	display: flex;
 	flex-direction: row;
+	margin-left: 30%;
 
 
 }
@@ -321,14 +337,24 @@ span {
 	display: block;
 }
 
-#puppy-gram-title{
-	padding-bottom: 0px;
-	text-align: center;
 
+.friends-link {
+	float: left;
+	width: 100%;
 }
-.title{
+#puppy-gram-title {
+	text-align: left;
+	padding-left: 30px;
+	padding-top: 30px;
+	font-size: 22px;
+}
 
-
+#bio-wrapper {
+	display: flex;
+	flex-direction: column;
+	padding-right: 20%;
+	text-align: left;
+	padding-left: 10px;
 }
 
 #my-profile {
@@ -349,7 +375,7 @@ span {
   h1 {
     float: none;
     margin-top: 0;
-    text-align: left;
+    // text-align: left;
   }
 
   nav {
@@ -369,7 +395,19 @@ span {
     padding: 0;
     font-size: 22px;
     line-height: 22px;
+  
+  .friends-link{
+  	margin: 0 auto;
   }
+  #bio-wrapper {
+	display: flex;
+	flex-direction: column;
+	padding-right: 20%;
+	text-align: left;
+	padding-left: 10px;
+	font-size: 10px;
+}
+
 
   .hamburger {
     display: block;

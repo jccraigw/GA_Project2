@@ -13,10 +13,20 @@
 			<li><a href='http://localhost:3000/logout'>Logout</a></li> 
 
 		</nav>
+
+<div class='friends-list'>
+		<ul>
+			<li>friend 1</li>
+			<li>friend 2</li>
+
+		</ul>
+</div>
+
 {{#each user.friends}}
 		<ul>
 			<li><a href="http://localhost:3000/{{this._id}}">{{this.name}}</li>
+			<li>friend 1</li>
+			<li>friend 2</li>
 
 		</ul>
 {{/each}}
-</div>
