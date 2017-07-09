@@ -14,19 +14,17 @@
 
 		</nav>
 
-<div class='friends-list'>
-		<ul>
-			<li>friend 1</li>
-			<li>friend 2</li>
+		<hr>
+		<div class="friends_list">
+		{{#each user.friends}}
+				<ul>
 
-		</ul>
+					<li>
+					<img id="friends_pic" src="{{this.image}}">
+					<a href="http://localhost:3000/{{this._id}}">{{this.name}}
+
+					</li>	
+				</ul>
+		{{/each}}
+		</div>
 </div>
-
-{{#each user.friends}}
-		<ul>
-			<li><a href="http://localhost:3000/{{this._id}}">{{this.name}}</li>
-			<li>friend 1</li>
-			<li>friend 2</li>
-
-		</ul>
-{{/each}}
