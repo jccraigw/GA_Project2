@@ -1,4 +1,4 @@
-<body id='profile-hbs'>
+<div id='profile-hbs'>
 
 		<div class="hamburger" title="Open Navigation"><img src='../images/hamburger.png' style="width: 20px; height: 20px;"/></div>
 		<nav class='nav-dropdown'>
@@ -73,10 +73,15 @@
 		<ul id='user-images'>
 		{{#each user.posts}}
 			<li>
-			
-				<img class="image_post" src="{{this.link}}" width="200" height="200">
+				
+				<div class="post_wrapper">
+					<img class="image_post" src="{{this.link}}" width="200" height="200">
+				</div>
+				
 				<button class="like">Like</button>
-				<span>{{this.likes}}</span>
+				<span class="like_num">{{this.likes}}</span>
+
+
 				{{!-- pull description from post collection --}}
 				<div class="descriptionBox">{{this.description}}</div>
 				<input class = "postId" value="{{this._id}}" type="hidden" />
@@ -96,4 +101,4 @@
 		{{/each}}
 		</ul>
 
-</body>
+</div>
