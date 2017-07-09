@@ -32,7 +32,7 @@
 
 		<div class="profile_wrapper">
 			<div class="profile_image">
-				<img src="{{user.image}}" width="200" height="200">	
+				<img id="profilePic" src="{{user.image}}" width="200" height="200">	
 			</div>
 			<div id='bio-wrapper'>
 			<br>
@@ -71,11 +71,13 @@
 
 
 		<form id="imgur">
-  			<h3>{{user.name}}'s Images<h3>
+  			
 
   			<br>
   			<input id="uploadPost" type="file" class="imgur" accept="image/*" data-max-size="5000"/>
   			<button id="upload">Upload</button>
+  			<br>
+  			<br>
   			<input id = "userId" value="{{user._id}}" type="hidden" />
 		</form>
 		{{else}}

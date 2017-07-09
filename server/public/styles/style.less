@@ -34,12 +34,6 @@ body{
    
 }
 
-#friends-link{
-  	margin: 0 auto;
-  }
-
-
-
 nav {
   text-align: right;
 }
@@ -96,12 +90,11 @@ nav a:hover {
 }
 #friends-hbs {
 	background-color: @nice-green;
+	width: 100%;
+	
+	
 	
   
-}
-
-.friends-list ul li {
-	color: white;
 }
 @keyframes coverimage {
  0% {
@@ -233,12 +226,6 @@ a {
 
 }
 
-p {
-	color: white;
-}
-
-
-
 .join-button {
 	border-radius: 11px;
   	font-family: 'Roboto', sans-serif;
@@ -294,11 +281,9 @@ span {
  
 }
 .profile_wrapper{
-	margin: 0 auto;
-	text-align: center;
+
 	display: flex;
 	flex-direction: row;
-	margin-left: 30%;
 
 
 }
@@ -340,24 +325,14 @@ span {
 	display: block;
 }
 
+#puppy-gram-title{
+	padding-bottom: 0px;
+	text-align: center;
 
-.friends-link {
-	float: left;
-	width: 100%;
 }
-#puppy-gram-title {
-	text-align: left;
-	padding-left: 30px;
-	padding-top: 30px;
-	font-size: 22px;
-}
+.title{
 
-#bio-wrapper {
-	display: flex;
-	flex-direction: column;
-	padding-right: 20%;
-	text-align: left;
-	padding-left: 10px;
+
 }
 
 #my-profile {
@@ -399,18 +374,6 @@ span {
     padding: 0;
     font-size: 22px;
     line-height: 22px;
-  }
-  .friends-link{
-  	margin: 0 auto;
-  }
-  #bio-wrapper {
-	display: flex;
-	flex-direction: column;
-	padding-right: 20%;
-	text-align: left;
-	padding-left: 10px;
-	font-size: 10px;
-}
 
 
   .hamburger {
@@ -436,7 +399,7 @@ span {
 .like_num{
 	position: absolute;
 	margin-top: -180px;
-	margin-left: 70px;
+	margin-left: 170px;
 	font-size: 24px;
 	
 
@@ -610,5 +573,36 @@ span {
 	padding-left: 40%;
 	padding-top: 10%;
 }
+#profilePic{
 
+	border-radius: 50%;
+}
+#friends_pic{
+
+	border-radius: 50%;
+}
+
+.friends_list{
+margin-left: 45%;
+margin-top: 100px;
+
+}
+.friends_list li{
+
+
+	text-align: center;
+	text-decoration: none;
+	margin-bottom: 0px;
+
+		
+
+}
+.friends_list ul{
+
+	
+	list-style: none;
+	padding: 10px;
+	margin: 0px;
+
+}
 

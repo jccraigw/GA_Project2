@@ -68,6 +68,7 @@ nav a:hover {
 }
 #friends-hbs {
   background-color: #161B43;
+  width: 100%;
 }
 .friends-list ul li {
   color: white;
@@ -185,9 +186,6 @@ a {
   color: white;
   margin-bottom: 0px;
 }
-p {
-  color: white;
-}
 .join-button {
   border-radius: 11px;
   font-family: 'Roboto', sans-serif;
@@ -240,11 +238,8 @@ span {
   font-size: 24px;
 }
 .profile_wrapper {
-  margin: 0 auto;
-  text-align: center;
   display: flex;
   flex-direction: row;
-  margin-left: 30%;
 }
 .profile_image {
   position: relative;
@@ -273,22 +268,11 @@ span {
 .gear_background:hover {
   display: block;
 }
-.friends-link {
-  float: left;
-  width: 100%;
-}
+
+
 #puppy-gram-title {
-  text-align: left;
-  padding-left: 30px;
-  padding-top: 30px;
-  font-size: 22px;
-}
-#bio-wrapper {
-  display: flex;
-  flex-direction: column;
-  padding-right: 20%;
-  text-align: left;
-  padding-left: 10px;
+  padding-bottom: 0px;
+  text-align: center;
 }
 #my-profile {
   width: 100%;
@@ -304,6 +288,7 @@ span {
     float: none;
     margin-top: 0;
     padding-bottom: 20px;
+    text-align: left;
   }
   nav {
     float: none;
@@ -319,6 +304,7 @@ span {
     font-size: 22px;
     line-height: 22px;
   }
+
   .friends-link {
     margin: 0 auto;
   }
@@ -330,6 +316,7 @@ span {
     padding-left: 10px;
     font-size: 10px;
   }
+
   .hamburger {
     display: block;
   }
@@ -346,7 +333,7 @@ span {
 .like_num {
   position: absolute;
   margin-top: -180px;
-  margin-left: 70px;
+  margin-left: 170px;
   font-size: 24px;
 }
 .like_num2 {
@@ -460,6 +447,7 @@ span {
   column-gap: 0px;
   margin: 0 auto;
 }
+
 #comment-container {
   margin: 0 auto;
   display: flex;
@@ -476,4 +464,24 @@ span {
   width: 100%;
   padding-left: 40%;
   padding-top: 10%;
+}
+#profilePic {
+  border-radius: 50%;
+}
+#friends_pic {
+  border-radius: 50%;
+}
+.friends_list {
+  margin-left: 45%;
+  margin-top: 100px;
+}
+.friends_list li {
+  text-align: center;
+  text-decoration: none;
+  margin-bottom: 0px;
+}
+.friends_list ul {
+  list-style: none;
+  padding: 10px;
+  margin: 0px;
 }
