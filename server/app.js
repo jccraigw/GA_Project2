@@ -44,7 +44,12 @@ app.use('/post', PostController);
 app.use('/comment', CommentController);
 
 
+var port = process.env.PORT || 3000;
+
+server.listen(port, function(){
+	console.log("listening on port " + port);
+})
 //server.listen(3000)
-server.listen(process.env.PORT)
+// server.listen(process.env.PORT)
 
 
