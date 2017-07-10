@@ -8,9 +8,9 @@
 		</div>
 		<nav class='nav-dropdown'>
 
-			<li><a href="http://localhost:3000/feed">Feed</a></li>{{!-- //need to update to send to user profile --}}
-			<li><a href="http://localhost:3000/{{userid}}">Profile</a></li> {{!-- //need to update to send to user profile --}}
-			<li><a href='http://localhost:3000/logout'>Logout</a></li> 
+			<li><a href="./feed">Feed</a></li>{{!-- //need to update to send to user profile --}}
+			<li><a href="./{{userid}}">Profile</a></li> {{!-- //need to update to send to user profile --}}
+			<li><a href='./logout'>Logout</a></li> 
 
 		</nav>
 
@@ -21,7 +21,7 @@
 
 					<li>
 					<img id="friends_pic" src="{{this.image}}">
-					<a href="http://localhost:3000/{{this._id}}">{{this.name}}
+					<a href="./{{this._id}}">{{this.name}}
 
 					</li>	
 				</ul>

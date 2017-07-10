@@ -6,12 +6,12 @@
 		</div>
 		<nav class='nav-dropdown'>
 
-			<li><a href="http://localhost:3000/feed">Feed</a></li>{{!-- //need to update to send to user profile --}}
+			<li><a href="./feed">Feed</a></li>{{!-- //need to update to send to user profile --}}
 			{{#if current}}
 			{{else}}
-			<li><a href="http://localhost:3000/{{userid}}">Profile</a></li> 
+			<li><a href="./{{userid}}">Profile</a></li> 
 			{{/if}}
-			<li><a href='http://localhost:3000/logout'>Logout</a></li> 
+			<li><a href='./logout'>Logout</a></li> 
 
 		</nav>
 <h1>{{user.name}}</h1>
@@ -40,7 +40,7 @@
 
 			<p>{{user.bio}}</p>
 
-			<a href="http://localhost:3000/{{user._id}}/friends">Friends</a>
+			<a href="./{{user._id}}/friends">Friends</a>
 			</div>
 			{{#if current}}
 			<div class="gear_background">
@@ -89,7 +89,7 @@
 		{{#each user.posts}}
 			<li>
 				<div class="postImage_wrapper">
-				<a href="http://localhost:3000/post/{{this._id}}">
+				<a href="./post/{{this._id}}">
 				<div class="post_wrapper">
 					<img class="image_post" src="{{this.link}}" width="200" height="200">
 				</div>
