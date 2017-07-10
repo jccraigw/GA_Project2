@@ -1,9 +1,12 @@
+require('dotenv').config();
+
 var express = require('express'),
     app = express(),
     server = require('http').createServer(app),
     session = require('express-session'),
 	bodyParser = require('body-parser'),
 	path = require('path');
+
 
 //connect to database
 require('./db/db.js');
