@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 //mongoose.Promise = global.Promise;
-var connectionString = 'mongodb://localhost/food';
+var connectionString = 'mongodb://localhost/travel2';
 
 
 mongoose.connect(connectionString);
