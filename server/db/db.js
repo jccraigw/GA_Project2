@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 //mongoose.Promise = global.Promise;
-var connectionString = 'mongodb://localhost/travel2';
+var connectionString = process.env.DB_HOST;
 
 
 mongoose.connect(connectionString);
