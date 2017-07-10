@@ -125,7 +125,7 @@ $(".image_post").dblclick(function(e){
         $.ajax({
 
         	method: "PATCH",
-        	url: "http://localhost:3000/" + userId,
+        	url: "../" + userId,
         	data: upload,
         	success: function(response){
 
@@ -194,7 +194,7 @@ $(".image_post").dblclick(function(e){
         $.ajax({
 
         	method: "POST",
-        	url: "http://localhost:3000/post",
+        	url: "../post",
         	data: upload,
         	success: function(response){
 
@@ -229,7 +229,7 @@ $(".image_post").dblclick(function(e){
 
 
   				method: "PATCH",
-  				url: "http://localhost:3000/post/" + postId,
+  				url: "../post/" + postId,
   				data: newDescription,
   				success: function(response){
 
@@ -250,7 +250,7 @@ $(".image_post").dblclick(function(e){
 
 
   			method: "POST",
-  			url: "http://localhost:3000/post/" + postId + "/like",
+  			url: "../post/" + postId + "/like",
   			success: function(response){
   				var postId ="";
   				window.location.reload();
@@ -272,7 +272,7 @@ $(".image_post").dblclick(function(e){
 
 
   			method: "POST",
-  			url: "http://localhost:3000/" + userId + "/add",
+  			url: "../" + userId + "/add",
   			success: function(response){
 
   				window.location.reload();
@@ -289,7 +289,7 @@ $(".image_post").dblclick(function(e){
   	$.ajax({
 
   		method: "DELETE",
-  		url: "http://localhost:3000/" + userId + "/remove",
+  		url: "../" + userId + "/remove",
   		success: function(response){
 
   			window.location.reload();

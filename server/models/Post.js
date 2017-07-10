@@ -5,9 +5,10 @@ var PostSchema = new mongoose.Schema({
     link: String,
     description: String,
     likes: Number,
-    comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comments'}]
+    comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comments'}],
 
-});
+
+}, { timestamps: true});
 
 var postModel = mongoose.model('Post', PostSchema);
 

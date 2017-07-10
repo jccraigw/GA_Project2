@@ -44,7 +44,7 @@ app.use('/post', PostController);
 app.use('/comment', CommentController);
 
 
-
+//server.listen(3000)
 server.listen(process.env.PORT)
 
 

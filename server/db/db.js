@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 //mongoose.Promise = global.Promise;
+//var connectionString = 'mongodb://localhost/food';
 var connectionString = process.env.DB_HOST;
 
 
