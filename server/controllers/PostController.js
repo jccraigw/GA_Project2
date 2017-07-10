@@ -83,7 +83,7 @@ router.post('/:id/like', function(req, res){
 		//console.log(currentPost);
 
 		//this will be req.session.userID
-		var userId = req.session.userID.toString();
+		var userId = req.session.userID;
 		User.findById(userId, function(err, users){
 
 			//console.log(user);
