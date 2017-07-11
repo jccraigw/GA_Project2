@@ -50,10 +50,15 @@ router.get('/join', function(req, res){
 //get request to route/feed that renders food image feed page
 router.get('/feed', function(req, res){
 	//find the Users in the database and display there images on the feed
-	User.find().populate('posts').populate('comments').exec(function(err, users){
 
+	var id = req.session.userID;
+	User.findById(id).populate('posts').populate('comments').exec(function(err, user){
 
-		Post.find({}).sort({createdAt: -1 }).exec(function(err, docs){
+		//pull friends from user
+		var friends = user.friends;
+
+		//find post in the db with the user.friends 
+		Post.find({userid: friends}).sort({createdAt: -1 }).exec(function(err, docs){
 
 			feedArray.push(docs); 
 			//console.log(feedArray);
@@ -204,10 +209,12 @@ router.post('/join', function(req, res){
     		location: req.body.location,
     		bio: req.body.bio,
     		image: req.body.image,
-    		likedPost: req.body.liked
+    		likedPost: req.body.liked,
+    		
     		
 		})
-
+		user.friends.push(user._id);
+				
 		user.save();
 	})
 
@@ -263,24 +270,30 @@ router.post('/:id/add', function(req, res){
 	//would use current id here to get the logged in user
 	User.findById(currentUserID, function(error, user){
 
+		User.findById(id, function(error,other){
 
-		user.friends.forEach(function(like){
+			user.friends.forEach(function(like){
 
 			if(id === like.toString()){
 
 					newFriend = false;
 			}
 				
-		})
+			})
 
 			if(newFriend){
 
 				user.friends.push(id);
+				other.friends.push(currentUserID);
+				other.save();
 				user.save();
 			}
 	
 		//redirect user after this step not just render json
 		res.json(user);
+
+		})
+		
 
 	})
 })
