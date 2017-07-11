@@ -1,0 +1,28 @@
+<h1>search</h1>
+
+		<a href="/feed">feed</a>
+
+
+<form id="search_form" action="/search" method="POST" >
+
+		<div id='search-form'>
+		<input class='search_form' name="user"placeholder="search users" />
+		
+				
+	
+
+		<br>
+		<button class='join-button'>search</button>
+		</div>
+
+	</form>
+	<ul>
+		{{#each users}}
+		<li>
+			<img src="{{this.image}}" width="50" height="50">
+			<a href="/{{this._id}}"> {{this.name}}</a>
+		
+		</li>
+		
+		{{/each}}
+	</ul>
