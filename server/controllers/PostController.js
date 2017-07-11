@@ -15,7 +15,7 @@ router.get('/:id', function(req, res){
 	var id = req.params.id;
 	Post.findById(id, function(err, post){
 
-	
+
 		// post.forEach(function(arrayItem){
 
 		// 	console.log(arrayItem.createdAt);
@@ -40,7 +40,9 @@ router.post('/', function(req, res){
 	var userId = req.body.userId;
 	User.findById(userId, function(err, user){
 
-		var post = new Post({link: postLink, description: postDesc, likes : 0});
+		var username = user.name;
+		var userimg = user.image;
+		var post = new Post({link: postLink, description: postDesc, likes : 0, userid: userId, username: username, userimg: userimg});
 		post.save();
 		postId = post.id;
 

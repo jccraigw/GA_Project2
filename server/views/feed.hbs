@@ -8,7 +8,7 @@
 				</div>
 				<nav class='nav-dropdown'>
 
-
+						
 					<li><a href="/{{userid}}">Profile</a></li> {{!-- //need to update to send to user profile --}}
 					<li><a href='/logout'>Logout</a></li> 
 
@@ -25,24 +25,24 @@
 
 
 <div id='feed-container'>
-	{{#each users}}
+	{{#each post}}
 		
 
-		<a href="/{{this._id}}">
+		<a href="/{{userid}}">
 
 		
 	{{!-- 	<img src='{{posts.link}}'></a></li> --}}
 		{{!-- <div id='feed-images'> --}}
 		
-			{{#each posts}}
+		{{!-- 	{{#each post}} --}}
 				<div class="feedPost_wrapper">
 					
 						<div class="feedPost_img">
-							<img src="{{../image}}"> 
+							<img src="{{userimg}}"> 
 						</div>
 						
 						<div class="feedPost_name"> 
-							{{../name}}
+							{{username}}
 							
 							</div>
 				</div>
@@ -57,7 +57,7 @@
 							
 							</div>
 				</div>
-			{{/each}}
+			{{!-- {{/each}} --}}
 		{{!-- </div> --}}
 		
 

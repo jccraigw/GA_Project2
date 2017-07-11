@@ -6,6 +6,10 @@ var PostSchema = new mongoose.Schema({
     description: String,
     likes: Number,
     comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comments'}],
+    userid: String,
+    username: String,
+    userimg: String
+
 
 
 }, { timestamps: {type:Number, default: new Date().getTime()}

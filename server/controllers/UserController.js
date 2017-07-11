@@ -64,6 +64,17 @@ router.get('/feed', function(req, res){
 
 			console.log(feedArray[0]);
 
+			var allPost = {post: docs,
+							userid: req.session.userID};
+			if(req.session.loggedIn === true){
+
+			res.render('feed', allPost);
+
+			}else{
+
+			res.redirect('/');
+		}
+
 		})
 
 	
@@ -78,16 +89,9 @@ router.get('/feed', function(req, res){
 
 
 
-		var allUsers = {users: users, loggedIn: req.session.loggedIn, userid: req.session.userID }
+		//var allUsers = {users: users, loggedIn: req.session.loggedIn, userid: req.session.userID }
 
-		if(req.session.loggedIn === true){
-
-			res.render('feed', allUsers);
-
-		}else{
-
-			res.redirect('/');
-		}
+		
 		
 
 	})
