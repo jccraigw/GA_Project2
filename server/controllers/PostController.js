@@ -23,7 +23,15 @@ router.get('/:id', function(req, res){
 
 		//console.log(req.session.Current);
 		var post = {post: post, current: req.session.Current}
+
+		if(req.session.loggedIn === true){
+				
 		res.render('post', post);
+
+		}else{
+
+				res.redirect('/');
+			}
 		
 	})
 

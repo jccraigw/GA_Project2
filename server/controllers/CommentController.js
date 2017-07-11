@@ -19,8 +19,15 @@ router.get('/:id', function(req, res){
 
 		var post = {post: post, 
 		 userid: req.session.userID };
+
+		 if(req.session.loggedIn === true){
 		
 		res.render('comments', post);
+
+		}else{
+
+				res.redirect('/');
+			}
 
 	})
 

@@ -67,7 +67,7 @@ router.get('/feed', function(req, res){
 		// 	return a.createdAT - b.createdAT;
 		// })
 
-			console.log(feedArray[0]);
+			//console.log(feedArray[0]);
 
 			var allPost = {post: docs,
 							userid: req.session.userID};
@@ -107,7 +107,12 @@ router.get('/feed', function(req, res){
 //get request to /search that will display the search page
 router.get('/search', function(req, res){
 
-		res.render('search');
+		if(req.session.loggedIn === true){
+			res.render('search');
+		}else{
+
+			res.redirect('/');
+		}
 
 })
 
