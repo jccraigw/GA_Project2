@@ -8,7 +8,8 @@ var PostSchema = new mongoose.Schema({
     comments: [{type: mongoose.Schema.Types.ObjectId, ref: 'Comments'}],
 
 
-}, { timestamps: true});
+}, { timestamps: {type:Number, default: new Date().getTime()}
+	});
 
 var postModel = mongoose.model('Post', PostSchema);
 

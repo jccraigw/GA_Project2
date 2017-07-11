@@ -1,10 +1,13 @@
 var express = require('express');
 var router = express.Router();
 var User = require('../models/User');
+var Post = require('../models/Post');
 var bodyParser = require('body-parser');
 var bcrypt = require('bcrypt');
 var session = require('express-session');
 var currentUserID;
+
+var feedArray = [];
 
 router.use(bodyParser.urlencoded({extended: true}));
 
@@ -48,6 +51,32 @@ router.get('/join', function(req, res){
 router.get('/feed', function(req, res){
 	//find the Users in the database and display there images on the feed
 	User.find().populate('posts').populate('comments').exec(function(err, users){
+
+
+		Post.find({}).sort({createdAt: -1 }).exec(function(err, docs){
+
+			feedArray.push(docs); 
+			//console.log(feedArray);
+		// 	feedArray[0].sort(function(a, b){
+
+		// 	return a.createdAT - b.createdAT;
+		// })
+
+			console.log(feedArray[0]);
+
+		})
+
+	
+		// 	var stream = Post.find().stream();
+
+		// stream.on('data', function(doc){
+
+		// 	feedArray.push(doc); 
+		// 	console.log(feedArray);
+		// })
+
+
+
 
 		var allUsers = {users: users, loggedIn: req.session.loggedIn, userid: req.session.userID }
 

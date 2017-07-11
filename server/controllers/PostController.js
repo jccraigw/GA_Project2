@@ -15,6 +15,12 @@ router.get('/:id', function(req, res){
 	var id = req.params.id;
 	Post.findById(id, function(err, post){
 
+	
+		// post.forEach(function(arrayItem){
+
+		// 	console.log(arrayItem.createdAt);
+		// });
+
 		//console.log(req.session.Current);
 		var post = {post: post, current: req.session.Current}
 		res.render('post', post);
