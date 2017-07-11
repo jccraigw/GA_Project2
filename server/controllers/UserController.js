@@ -326,7 +326,12 @@ router.delete('/:id/remove', function(req, res){
 	 //would use current id here to get the logged in user
 	 User.update({"_id": currentUserID}, {$pull: {friends: id}}, {safe: true, multi:true}, function(err, obj){
 	 		//very useful console log and res send
-	 		console.log(err);
+	 		
+
+	 		User.update({"_id": id}, {$pull: {friends: currentUserID}}, {safe: true, multi:true}, function(err, obj){
+
+	 			 console.log(err);
+	 		})
 	 		res.send(obj);
 	 })	
 
