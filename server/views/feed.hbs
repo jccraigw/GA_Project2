@@ -1,70 +1,44 @@
-<body id='feed-hbs'>
+<div class='feed-hbs'>
+	<div class="feed_header">	
+		<h2>Wanderlyst</h2>
+	</div>	
 	
-			
-					<div class="hamburger" title="Open Navigation"></div>
-					<div class="title">
-					<h1 id='puppy-gram-title'>Wanderlyst</h1>
-				
-				</div>
-				<nav class='nav-dropdown'>
-
-						
-					<li><a href="/{{userid}}">Profile</a></li> {{!-- //need to update to send to user profile --}}
-					<li><a href='/logout'>Logout</a></li> 
-
-					
-				</nav>
-
-			
-	
-		
-		
-		
-
-					<a href="/search">Search</a>
-
-
-<div id='feed-container'>
-	{{#each post}}
-		
-
-		<a href="/{{userid}}">
-
-		
-	{{!-- 	<img src='{{posts.link}}'></a></li> --}}
-		{{!-- <div id='feed-images'> --}}
-		
-		{{!-- 	{{#each post}} --}}
-				<div class="feedPost_wrapper">
-					
+	<div id='feed-container'>
+		<ul>
+			{{#each post}}
+				<li>
+					<div class="feedPost_wrapper">
 						<div class="feedPost_img">
-							<img src="{{userimg}}"> 
+							<img class="poster_pic" src="{{userimg}}">
 						</div>
-						
 						<div class="feedPost_name"> 
-							{{username}}
-							
-							</div>
-				</div>
-					<img class="feed_post" src='{{link}}' width="200" height="200" />
-
-						<div class="feedPost_wrapper_description">
-					
-						
-						
+							<a href="/{{userid}}">{{username}}</a>		
+						</div>
+					</div>
+					<div class="feed_pic">
+						<img class="feed_post" src='{{link}}' width="200" height="200" />
+					</div>
+					<div class="feedPost_wrapper_description">
 						<div class="feedPost_name"> 
 							<p>{{description}}  </p>
-							
-							</div>
-				</div>
-			{{!-- {{/each}} --}}
-		{{!-- </div> --}}
-		
-
-	{{/each}}
-
+						</div>
+					</div>
+				</li>
+			{{/each}} 
+		</ul>
+	</div>
+	<div class="feed_footer">
+		<div class="footer_feed">
+			<a href="/feed"><i class="material-icons">home</i></a>
+		</div>
+		<div class="footer_search">
+				<a href="/search"><i class="material-icons">search</i></a>
+		</div>
+		<div class="footer_profile">
+			<a href="/{{userid}}"><i class="material-icons">person</i></a>
+		</div>
+	</div>
 </div>
-</body>
 
 
 	
