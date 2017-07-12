@@ -60,7 +60,7 @@ router.get('/feed', function(req, res){
 		//find post in the db with the user.friends 
 		Post.find({userid: friends}).sort({createdAt: -1 }).exec(function(err, docs){
 
-			feedArray.push(docs); 
+			//feedArray.push(docs); 
 			//console.log(feedArray);
 		// 	feedArray[0].sort(function(a, b){
 
@@ -184,11 +184,29 @@ router.get('/:id/friends', function(req, res){
 				req.session.Current = false;
 			}
 
+			var friendsList = [];
+			for(var i = 0; i < user.friends.length; i++){
 
+					//console.log(user.friends[i]._id);
+					//console.log("userid: "+ req.session.userID);
+					if (user.friends[i]._id == req.session.userID){
+
+						//console.log("same");
+
+
+					}else{
+
+						friendsList.push(user.friends[i]);
+					}
+
+			}
+
+				//console.log(friendsList);
 
 			var user = {user: user,
 					current: isUser,
-				 userid: req.session.userID };
+				 userid: req.session.userID, 
+					friendsList: friendsList};
 
 			if(req.session.loggedIn === true){
 				

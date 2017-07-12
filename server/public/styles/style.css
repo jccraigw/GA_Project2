@@ -1,16 +1,13 @@
-* {
-  box-sizing: border-box;
-  font-family: 'Pontano Sans', sans-serif;
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
 }
 nav {
   text-align: right;
-}
-body {
-  background-color: #161B43;
-  margin: 0px;
-  padding: 0px;
-  height: 100%;
-  width: 100%;
 }
 .hamburger {
   width: 35px;
@@ -67,38 +64,6 @@ nav a:hover {
   background-color: #161B43;
   width: 100%;
 }
-@keyframes coverimage {
-  0% {
-    background-image: url('../images/home1.jpg');
-  }
-  25% {
-    background-image: url('../images/home2.jpg');
-  }
-  50% {
-    background-image: url('../images/home3.jpg');
-  }
-  75% {
-    background-image: url('../images/home2.jpg');
-  }
-  100% {
-    background-image: url('../images/home5.jpg');
-  }
-}
-.layout-hbs {
-  background-image: url('../images/home1.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  animation-name: coverimage;
-  animation-duration: 10s;
-}
-h1 {
-  padding-top: 40px;
-  font-family: 'Pontano Sans', sans-serif;
-  color: white;
-  padding-bottom: 20px;
-}
 h2 {
   padding-top: 20px;
   padding-bottom: 50px;
@@ -113,16 +78,6 @@ h4 {
   margin: 0 auto;
   text-align: center;
   padding-top: 30px;
-}
-h1,
-#login-form {
-  margin: 0 auto;
-  width: 100%;
-  text-align: center;
-}
-#login-form {
-  padding: 10px;
-  font-family: 'Roboto', sans-serif;
 }
 #user-info {
   margin: 0 auto;
@@ -146,16 +101,6 @@ h1,
 #join-form {
   margin: 0 auto;
   text-align: center;
-}
-.login-button,
-.profile-button {
-  border-radius: 11px;
-  font-family: 'Roboto', sans-serif;
-  color: #ffffff;
-  font-size: 15px;
-  background: #F3A482;
-  padding: 5px 10px 5px 10px;
-  text-decoration: none;
 }
 #image-container {
   display: flex;
@@ -266,36 +211,6 @@ span {
   text-align: right;
   font-family: 'Pontano Sans', sans-serif;
   padding: 20px;
-}
-@media screen and (max-width: 1020px) {
-  header {
-    padding: 20px;
-  }
-  h1 {
-    float: none;
-    margin-top: 0;
-    padding-bottom: 20px;
-  }
-  nav {
-    float: none;
-    padding-left: 0;
-    text-align: center;
-  }
-  nav li {
-    float: none;
-    padding: 15px;
-  }
-  nav a {
-    padding: 0;
-    font-size: 22px;
-    line-height: 22px;
-  }
-  .hamburger {
-    display: block;
-  }
-  #puppy-gram-title {
-    text-align: center;
-  }
 }
 .like {
   display: none;
@@ -464,4 +379,71 @@ span {
 .friends_list li img {
   height: 200px;
   width: 200px;
+}
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5) {
+  html,
+  body {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: hidden;
+  }
+}
+.home-hbs {
+  display: flex;
+  flex-direction: column;
+}
+.header_wrapper {
+  height: 150px;
+  line-height: 120px;
+  vertical-align: center;
+  background: url('../images/bgtile.jpg');
+  background-repeat: repeat-x;
+  color: white;
+  font-size: 20px;
+  text-align: center;
+}
+#login-form {
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  margin-top: 60px;
+}
+.login-button {
+  width: 80%;
+  border-radius: 4px;
+  border: 1px solid #4c87e0;
+  margin-top: 10px;
+  height: 40px;
+  background-color: #4c87e0;
+  color: white;
+}
+.form-field {
+  width: 80%;
+  height: 40px;
+  margin-bottom: 30px;
+  border-radius: 4px;
+  border: 1px solid #d4d7db;
+}
+.login_footer {
+  color: black;
+  margin-top: 235px;
+  text-align: center;
+  background-color: white;
+  margin-bottom: 0px;
+  vertical-align: center;
+  line-height: 43px;
+}
+.login_footer a:visited {
+  color: black;
+  text-decoration: none;
+}
+.login_footer a {
+  text-decoration: none;
+}
+hr {
+  border: 0;
+  border-top: .5px solid #d4d7db;
+  margin: 0;
+  height: 1px;
 }
