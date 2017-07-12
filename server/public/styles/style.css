@@ -7,7 +7,7 @@ html {
   overflow-x: hidden;
 }
 * {
-  border: 1px solid red;
+  // border: 1px solid red;
 }
 .hamburger {
   width: 35px;
