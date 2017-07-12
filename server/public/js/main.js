@@ -4,10 +4,10 @@ var imageUpload;
 
 $("document").ready(function() {
 	//hide profile image button uploader
-	$('#profileImage').hide();
+//	$('#profileImage').hide();
 	$('.descriptionEdit_toggle').hide();
 	$('#uploadPost').hide();
-	$('.gear_background').hide();
+	//$('.gear_background').hide();
 
 	$('#upload').click(function(e){
 		e.preventDefault()
