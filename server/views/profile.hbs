@@ -10,13 +10,29 @@
 			<img class="profilePic" src="{{user.image}}" width="90" height="90">	
 			</div>
 			<div class="bio_right">
-				<div class="bio_frieds">
+				<div class="bio_friends">
 					<a href="/{{user._id}}/friends">Friends</a>
+						{{#if current}}
+					{{else}}
+					{{!-- 	<div id='button-container'> --}}
+							<input id = "userId" value="{{user._id}}" type="hidden" />
+							<button id="add" class='profile-button'>Add</button>
+							<button id="remove" class='profile-button'>Remove</button>
+						{{!-- </div> --}}
+					{{/if}}
 				</div>
-				<div class="bio_add_remove"></div>
+				<div class="bio_add_remove">
+
+					<p><i class="material-icons">place</i> {{user.location}}</p>
+	 			
+				</div>
 			</div>
 		</div>
 		<div class="bio_text">
+
+			
+
+				<p>{{user.bio}}</p>
 
 		</div>
 		<div class="bio_border"></div>

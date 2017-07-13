@@ -1,28 +1,36 @@
-<h1>search</h1>
+<div class='search-hbs'>
+	<div class="search_header">
+		<form id="search_form" action="/search" method="POST" >
 
-		<a href="/feed">feed</a>
-
-
-<form id="search_form" action="/search" method="POST" >
-
-		<div id='search-form'>
-		<input class='search_form' name="user"placeholder="search users" />
-		
-				
-	
-
-		<br>
-		<button class='join-button'>search</button>
-		</div>
-
+			<div id='search'>
+			<input class='search_input' name="user"placeholder="  search" />
+			<br>
+			<button class='search-button'>Search</button>
+			</div>
 	</form>
-	<ul>
-		{{#each users}}
-		<li>
-			<img src="{{this.image}}" width="50" height="50">
-			<a href="/{{this._id}}"> {{this.name}}</a>
-		
-		</li>
-		
-		{{/each}}
-	</ul>
+
+	</div>
+	<div class="search_results">	
+		<ul>
+			{{#each users}}
+			<li>
+				<img class="search_pic" src="{{this.image}}" width="40" height="40">
+
+				<a href="/{{this._id}}"> {{this.name}}</a>
+			</li>
+			{{/each}}
+		</ul>
+	</div>
+	<div class="feed_footer">
+		<div class="footer_feed">
+			<a href="/feed"><i class="material-icons">home</i></a>
+		</div>
+		<div class="footer_search">
+				<a href="/search"><i class="material-icons">search</i></a>
+		</div>
+		<div class="footer_profile">
+
+			<a href="/{{id}}"><i class="material-icons">person</i></a>
+		</div>
+	</div>
+</div>

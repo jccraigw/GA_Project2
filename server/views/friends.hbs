@@ -1,20 +1,8 @@
-<div id='friends-hbs'>
+<div class='friends-hbs'>
+	<div class="profile_header">
+		<h3>Friends</h3>
+	</div>	
 
-
-		<div class="hamburger" title="Open Navigation"></div>
-
-		<div class="title">
-			<h1 id='puppy-gram-title'>Wanderlyst</h1>
-		</div>
-		<nav class='nav-dropdown'>
-
-
-			<li><a href="/feed">Feed</a></li>{{!-- //need to update to send to user profile --}}
-			<li><a href="/{{userid}}">Profile</a></li> {{!-- //need to update to send to user profile --}}
-			<li><a href='/logout'>Logout</a></li> 
-
-
-		</nav>
 
 		<hr>
 		<div class="friends_list">
@@ -22,7 +10,7 @@
 				<ul>
 
 					<li>
-					<img id="friends_pic" src="{{this.image}}">
+					<img id="friends_pic" src="{{this.image}}" width="40" height="40">
 
 					<a href="/{{_id}}">{{name}}</a>
 
@@ -31,4 +19,16 @@
 				</ul>
 		{{/each}}
 		</div>
+
+	<div class="feed_footer">
+		<div class="footer_feed">
+			<a href="/feed"><i class="material-icons">home</i></a>
+		</div>
+		<div class="footer_search">
+				<a href="/search"><i class="material-icons">search</i></a>
+		</div>
+		<div class="footer_profile">
+			<a href="/{{userid}}"><i class="material-icons">person</i></a>
+		</div>
+	</div>
 </div>

@@ -107,8 +107,9 @@ router.get('/feed', function(req, res){
 //get request to /search that will display the search page
 router.get('/search', function(req, res){
 
+		var user = {id: req.session.userID}
 		if(req.session.loggedIn === true){
-			res.render('search');
+			res.render('search', user);
 		}else{
 
 			res.redirect('/');
@@ -236,7 +237,8 @@ router.post('/search', function(req, res){
 
 			}
 
-			var usersArray = {users: nameArray};
+			var usersArray = {users: nameArray,
+							id: req.session.userID};
 			// res.send(docs[0].name);
 			res.render('search', usersArray);
 	})
