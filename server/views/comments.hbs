@@ -1,39 +1,40 @@
-<div id='comments-hbs'>
+<div class='comments-hbs'>
 
-
-		<div class="hamburger" title="Open Navigation"></div>
-
-			<div class="title">
-			<h1 id='puppy-gram-title'>Wanderlyst</h1>
-		</div>
-		<nav class='nav-dropdown'>
-
-
-			<li><a href="/feed">Feed</a></li>{{!-- //need to update to send to user profile --}}
-			<li><a href="/{{userid}}">Profile</a></li> {{!-- //need to update to send to user profile --}}
-			<li><a href='/logout'>Logout</a></li> 
-
-
-		</nav>
-
-<div id='comment-container'>
-<input id="postId_comment" value="{{post._id}}" type="hidden">
-
-
-
-
-	<form action="/comment/{{post._id}}" method="POST">
-			<input name="text" placeholder="Type your comment here"style="width: 300px;"/>
-			<button>Submit</button>
-	</form>
-<ul>
-	{{#each post.comments}}
+	<div class="feed_header">	
+		<h2>Comments</h2>
+	</div>	
 		
-		<li>{{text}}</li>
+	
+	<div class='comment-container'>
+		<ul>
+			{{#each post.comments}}
+				
+				<li>{{text}}</li>
 
-	{{/each}}
+			{{/each}}
+		</ul>
+	</div>
 
-</ul>
-</div>
+	<div class="comment_input">
+		<input id="postId_comment" value="{{post._id}}" type="hidden">
+		<form action="/comment/{{post._id}}" method="POST">
+			<div class="comment_text_border">
+			<input class="comment_text" name="text" placeholder="Type your comment here"style="width: 300px;"/>
+			</div>
+			<button class="comment_submit">Submit</button>
+		</form>
+	</div>
+
+	<div class="feed_footer">
+		<div class="footer_feed">
+			<a href="/feed"><i class="material-icons">home</i></a>
+		</div>
+		<div class="footer_search">
+				<a href="/search"><i class="material-icons">search</i></a>
+		</div>
+		<div class="footer_profile">
+			<a href="/{{userid}}"><i class="material-icons">person</i></a>
+		</div>
+	</div>
 
 </div>

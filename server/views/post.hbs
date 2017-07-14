@@ -1,23 +1,60 @@
 
-<br>
-<div id='post-me'>
-<div class="post_wrapper">
-					<img class="image_post" src="{{post.link}}" width="300" height="300">
-				</div>
-				
-				<button class="like">Like</button>
-				<span class="like_num2">{{post.likes}} Likes</span>
-				<input class = "postId" value="{{post._id}}" type="hidden" />
-
-				{{!-- pull description from post collection --}}
-				<div class="descriptionBox">{{post.description}}</div>
-
-					{{!-- {{post.createdAt}} --}}
+<div class="post-hbs">
+	<div class="feed_header">	
+		<h2>{{post.username}}</h2>
+	</div>	
+	<div class="post_wrapper">
+		<img class="image_post2" src="{{post.link}}" >
+	</div>
+	<div class="post_details">
+			<a href="/comment/{{post._id}}">Comment</a>			
+			<button class="like">Like</button>
+			<span class="like_num2">{{post.likes}} Likes</span>
 			
-				{{!-- use static form to send patch request --}}
-				
-					
-				
+			<div class="descriptionBox">{{post.description}}</div>
+			{{post.createdAt}}
+	</div>
 
-					<a href="/comment/{{post._id}}">Comment</a>
 
+	{{#if current}} 
+		<div class="edit_wrapper">
+			<form class="descr">
+				<input class="description" type="text" />
+			</form>
+			<input class = "postId" value="{{post._id}}" type="hidden" />
+			<button class="descriptionEdit_toggle">Edit</button>
+			<input class = "postId" value="{{this._id}}" type="" />
+			<button class="descriptionAdd_toggle">Add</button>
+		</div>
+	{{else}}	
+	{{/if}}
+	<div class="feed_footer">
+		<div class="footer_feed">
+			<a href="/feed"><i class="material-icons">home</i></a>
+		</div>
+		<div class="footer_search">
+				<a href="/search"><i class="material-icons">search</i></a>
+		</div>
+		<div class="footer_upload">
+			{{#if current}}
+				<form id="imgur">
+		  			<br>
+		  			<input id="uploadPost" type="file" class="imgur" accept="image/*" data-max-size="5000"/>
+		  			<button id="upload"><i class="material-icons">file_upload</i></button>
+		  			<br>
+		  			<br>
+		  			<input id = "userId" value="{{user._id}}" type="hidden" />
+				</form>
+		{{else}}
+		{{/if}}
+
+		</div>
+		<div class="footer_profile">
+			<a href="/{{currentid}}"><i class="material-icons">person</i></a>
+		</div>
+		<div class="footer_logout">
+			<a href='/logout'><i class="material-icons">close</i></a>
+		</div>
+	</div>
+
+</div>

@@ -20,9 +20,20 @@ router.get('/:id', function(req, res){
 
 		// 	console.log(arrayItem.createdAt);
 		// });
+		var isUser = false;
+
+		// console.log("postuserid: " + post.userid)
+		// console.log("session.userid: " + req.session.userID)
+
+		if(post.userid == req.session.userID){
+
+			//console.log(true);
+			isUser = true;
+		}
+
 
 		//console.log(req.session.Current);
-		var post = {post: post, current: req.session.Current}
+		var post = {post: post, current: isUser, currentid: req.session.userID}
 
 		if(req.session.loggedIn === true){
 				

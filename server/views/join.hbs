@@ -1,36 +1,24 @@
-<div class="layout-hbs">
-<h1>Join Wanderlyst</h1>
+<div class="join-hbs">
 
-<h2>Share your desire to travel</h2>
-
-{{!-- //need to double check join post method in controller --}}
-
-<div id='join-form-container'>
-<form id="join_form" action="/join" method="POST" >
-
-		<h4>{{error}}</h4>
-		<br>
-		<div id='join-form'>
-		<input class='join_form' name="email"placeholder="Email" />
-		<br>
-		<input class='join_form' name="password" placeholder="Password"/>
-		<br>
-		<input class='join_form' name="name" placeholder="Full Name"/>
-		<br>
-		<input class='join_form' name="title" placeholder="Title"/>
-		<br>
-		<input class='join_form' name="location" placeholder="Location"/>
-		<br>
-		<input class='join_form' name="bio" placeholder="Bio"/>
-		<br>
-	
-	
-
-		<br>
-		<button class='join-button'>Join</button>
-		</div>
-
-	</form>
-</div>
+	<div class="feed_header">	
+		<h2>Join Wanderlyst</h2>
+	</div>	
+	<div class='join-form-container'>
+		<form id="join_form" action="/join" method="POST" >
+			<input class='join_field' name="email"placeholder="Email" />
+			<br>
+			<input class='join_field' name="password" placeholder="Password"/>
+			<br>
+			<input class='join_field' name="name" placeholder="Full Name"/>
+			<br>
+			<input class='join_field' name="title" placeholder="Title"/>
+			<br>
+			<input class='join_field' name="location" placeholder="Location"/>
+			<br>
+			<input class='join_field' name="bio" placeholder="Bio"/>
+			<br>
+			<button class='join-button'>Join</button>
+		</form>
+	</div>
 
 </div>

@@ -15,7 +15,7 @@ router.get('/:id', function(req, res){
 	var id = req.params.id;
 	Post.findById(id).populate({path : 'comments', model: 'Comment'}).exec(function(err, post){
 
-		console.log(post.comments.text);
+		//console.log(post.comments.text);
 
 		var post = {post: post, 
 		 userid: req.session.userID };

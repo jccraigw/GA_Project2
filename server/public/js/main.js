@@ -3,9 +3,10 @@ console.log("main.js connected!")
 var imageUpload;
 
 $("document").ready(function() {
+  $('.like').hide();
 	//hide profile image button uploader
-//	$('#profileImage').hide();
-	$('.descriptionEdit_toggle').hide();
+//$('#profileImage').hide();
+	//$('.descriptionEdit_toggle').hide();
 	$('#uploadPost').hide();
 	//$('.gear_background').hide();
 
