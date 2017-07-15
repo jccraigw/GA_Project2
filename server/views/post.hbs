@@ -66,20 +66,7 @@
 		<div class="footer_search">
 				<a href="/search"><i class="material-icons">search</i></a>
 		</div>
-		<div class="footer_upload">
-			{{#if current}}
-				<form id="imgur">
-		  			<br>
-		  			<input id="uploadPost" type="file" class="imgur" accept="image/*" data-max-size="5000"/>
-		  			<button id="upload"><i class="material-icons">file_upload</i></button>
-		  			<br>
-		  			<br>
-		  			<input id = "userId" value="{{user._id}}" type="hidden" />
-				</form>
-		{{else}}
-		{{/if}}
-
-		</div>
+	
 		<div class="footer_profile">
 			<a href="/{{currentid}}"><i class="material-icons">person</i></a>
 		</div>

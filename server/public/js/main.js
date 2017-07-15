@@ -72,7 +72,7 @@ $("nav a").on("click", function(e){
 // })
 
 
- document.getElementById("image_post2").addEventListener("touchstart", tapHandler);
+ $(".image_post2").on("touchstart", tapHandler);
 
 var tapedTwice = false;
 
