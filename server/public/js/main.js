@@ -72,12 +72,21 @@ $("nav a").on("click", function(e){
 // })
 
 
- 
-$('.image_post2').hammer().on("doubletap", function(){
+ document.getElementById("image_post2").addEventListener("touchstart", tapHandler);
 
-      
-      $('.like').click();
-  })
+var tapedTwice = false;
+
+function tapHandler(event) {
+    if(!tapedTwice) {
+        tapedTwice = true;
+        setTimeout( function() { tapedTwice = false; }, 300 );
+        return false;
+    }
+    event.preventDefault();
+    //action on double tap goes below
+    $('.like').click();
+ }
+
 
 
 		//profileimage upload process
