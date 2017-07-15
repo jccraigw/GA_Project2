@@ -1,10 +1,25 @@
 
 <div class="post-hbs">
-	<div class="feed_header">	
-		<h2>{{post.username}}</h2>
+	<div class="feed_header">
+	<a class="back_button" href="/{{post.userid}}"><i id="comment"class="material-icons">arrow_back</i></a>
+			
+		<h4>{{post.username}}</h4>
+	{{#if current}} 
+		<div class="edit_wrapper">
+			{{!-- <form class="descr">
+				<input class="description" type="text" />
+			</form> --}}
+			<input class = "postId" value="{{post._id}}" type="hidden" />
+			<button class="descriptionEdit_toggle" data-toggle="modal" data-target="#lab-slide-bottom-popup"><i id="comment"class="material-icons">edit</i></button>
+			{{!-- <input class = "postId" value="{{this._id}}" type="" />
+			<button class="descriptionAdd_toggle">Add</button> --}}
+		</div>
+	{{else}}	
+	{{/if}}
 	</div>	
 	<div class="post_wrapper">
-		<img class="image_post2" src="{{post.link}}" >
+		<img id="image_post2" class="image_post2" src="{{post.link}}" >
+
 	</div>
 
 
@@ -21,19 +36,6 @@
 	</div>
 
 
-	{{#if current}} 
-		<div class="edit_wrapper">
-			{{!-- <form class="descr">
-				<input class="description" type="text" />
-			</form> --}}
-			<input class = "postId" value="{{post._id}}" type="hidden" />
-			<button class="descriptionEdit_toggle" data-toggle="modal" data-target="#lab-slide-bottom-popup">Edit</button>
-			{{!-- <input class = "postId" value="{{this._id}}" type="" />
-			<button class="descriptionAdd_toggle">Add</button> --}}
-		</div>
-	{{else}}	
-	{{/if}}
-
 	<!-- MODAL CONTENT SAMPLE STARTS HERE -->
 <div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
   <div class="lab-modal-body">
@@ -45,7 +47,7 @@
 			<input class="description" type="text" />
 		</form>
 
-		<input class = "postId" value="{{post._id}}" type=" " />
+		<input class = "postId" value="{{post._id}}" type="hidden" />
 		<button class="descriptionAdd_toggle">Add</button>
     </div>
   </div>
