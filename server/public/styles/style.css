@@ -307,7 +307,7 @@ hr {
   display: flex;
   flex-direction: row;
   height: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 .bio_picture {
   flex-grow: 1;
@@ -503,10 +503,7 @@ hr {
 .comment_text {
   padding-left: 10px;
   width: 100%;
-}
-.comment_text_border {
-  border-top: 1px solid #d4d7db;
-  border-bottom: 1px solid #d4d7db;
+  border: 1px solid #d4d7db;
 }
 textarea:focus,
 input:focus,
@@ -572,6 +569,8 @@ button:focus {
 #comment {
   font-size: 20px;
   margin-left: 20px;
+  background-color: none;
+  border: none;
 }
 .modal.fade.in .lab-modal-body {
   bottom: 0;
