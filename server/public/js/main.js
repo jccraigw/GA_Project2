@@ -210,15 +210,15 @@ $(".image_post").dblclick(function(e){
   });
 
   	//description add process
-  $('.descr').hide();
-  $('.descriptionAdd_toggle').hide();
-  $('.descriptionEdit_toggle').click(function(e){
-  			e.preventDefault();
-  		$(e.target).parent().find(".descr").toggle()
-  		  $(e.target).parent().find('.descriptionAdd_toggle').toggle();
+ // $('.descr').hide();
+  //$('.descriptionAdd_toggle').hide();
+  // $('.descriptionEdit_toggle').click(function(e){
+  // 			e.preventDefault();
+  // 		$(e.target).parent().find(".descr").toggle()
+  // 		  $(e.target).parent().find('.descriptionAdd_toggle').toggle();
   		
-  		$('.descriptionAdd_toggle').click(function(){
-
+  		$('.descriptionAdd_toggle').click(function(e){
+          e.preventDefault();
   			 var postId = $(e.target).parent().find('.postId').val();
   			 var description = $(e.target).parent().find('.description').val();
 
@@ -238,8 +238,8 @@ $(".image_post").dblclick(function(e){
   				}
   			});
 
-  		})
-  });
+  		});
+  // });
 
 
   //still holding postId value from previous click so able to click the other like button and it increases
@@ -302,6 +302,19 @@ $(".image_post").dblclick(function(e){
   	})
 
   })
+
+});
+
+jQuery(document).ready(function($) {
+  // // auto timer
+  // setTimeout(function() {
+  //   $('#lab-slide-bottom-popup').modal('show');
+  // }, 5000); // optional - automatically opens in xxxx milliseconds
+
+  $(document).ready(function() {
+    $('.lab-slide-up').find('a').attr('data-toggle', 'modal');
+    $('.lab-slide-up').find('a').attr('data-target', '#lab-slide-bottom-popup');
+  });
 
 });
 

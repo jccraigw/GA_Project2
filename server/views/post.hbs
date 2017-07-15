@@ -6,28 +6,57 @@
 	<div class="post_wrapper">
 		<img class="image_post2" src="{{post.link}}" >
 	</div>
+
+
 	<div class="post_details">
-			<a href="/comment/{{post._id}}">Comment</a>			
+					
 			<button class="like">Like</button>
 			<span class="like_num2">{{post.likes}} Likes</span>
-			
+			<a href="/comment/{{post._id}}"><i id="comment"class="material-icons">comment</i></a>
+			<br>
+			<br>
 			<div class="descriptionBox">{{post.description}}</div>
+			<br>
 			{{post.createdAt}}
 	</div>
 
 
 	{{#if current}} 
 		<div class="edit_wrapper">
-			<form class="descr">
+			{{!-- <form class="descr">
 				<input class="description" type="text" />
-			</form>
+			</form> --}}
 			<input class = "postId" value="{{post._id}}" type="hidden" />
-			<button class="descriptionEdit_toggle">Edit</button>
-			<input class = "postId" value="{{this._id}}" type="" />
-			<button class="descriptionAdd_toggle">Add</button>
+			<button class="descriptionEdit_toggle" data-toggle="modal" data-target="#lab-slide-bottom-popup">Edit</button>
+			{{!-- <input class = "postId" value="{{this._id}}" type="" />
+			<button class="descriptionAdd_toggle">Add</button> --}}
 		</div>
 	{{else}}	
 	{{/if}}
+
+	<!-- MODAL CONTENT SAMPLE STARTS HERE -->
+<div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
+  <div class="lab-modal-body">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>    
+    <div class="text-center">
+    	<h1>Edit</h1>
+      
+      	<form class="descr">
+			<input class="description" type="text" />
+		</form>
+
+		<input class = "postId" value="{{post._id}}" type=" " />
+		<button class="descriptionAdd_toggle">Add</button>
+    </div>
+  </div>
+  <!-- /.modal-body -->
+</div>
+<!-- /.modal -->
+<!-- END MODAL CONTENT SAMPLE -->
+
+
+	
+
 	<div class="feed_footer">
 		<div class="footer_feed">
 			<a href="/feed"><i class="material-icons">home</i></a>
