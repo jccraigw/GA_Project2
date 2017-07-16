@@ -148,7 +148,7 @@ function tapHandler(event) {
         	data: upload,
         	success: function(response){
 
-        		window.location.reload();
+        		// window.location.reload();
         	}
 
         });
@@ -240,8 +240,8 @@ function tapHandler(event) {
   			 var postId = $(e.target).parent().find('.postId').val();
   			 var description = $(e.target).parent().find('.description').val();
 
-  			 console.log(postId);
-  			 console.log(description);
+  			 // console.log(postId);
+  			 // console.log(description);
 
   			 var newDescription = {description: description};
   			$.ajax({
@@ -258,6 +258,31 @@ function tapHandler(event) {
 
   		});
   // });
+
+      $('.profileAdd_toggle').click(function(e){
+          e.preventDefault();
+         var userId = $(e.target).parent().find('#userId').val();
+         var name = $(e.target).parent().find('#profileForm_name').val();
+          var location = $(e.target).parent().find('#profileForm_location').val();
+           var bio = $(e.target).parent().find('#profileForm_bio').val();
+
+         // console.log(postId);
+         // console.log(description);
+
+         var newProfile = {name: name, location: location, bio: bio};
+        $.ajax({
+
+
+          method: "PATCH",
+          url: "../" + userId,
+          data: newProfile,
+          success: function(response){
+
+            window.location.reload();
+          }
+        });
+
+      });
 
 
   //still holding postId value from previous click so able to click the other like button and it increases

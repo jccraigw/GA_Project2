@@ -1,6 +1,11 @@
 <div class='profile-hbs'>
 	<div class="profile_header">
 		<h3>{{user.name}}</h3>
+		{{#if current}}
+		<button class="profileEdit_toggle" data-toggle="modal" data-target="#lab-slide-bottom-popup">edit	</button>
+		{{else}}
+		{{/if}}
+
 	</div>	
 
 	<div id='user-info'>
@@ -64,6 +69,30 @@
 		
 	
 	</div>
+
+		<!-- MODAL CONTENT SAMPLE STARTS HERE -->
+<div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
+  <div class="lab-modal-body">
+    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>    
+    <div class="text-center">
+    	<h1>Edit Profile</h1>
+      	<br>
+      	<form class="descr">
+      		<input id='profileImage'type="file" class="imgur" accept="image/*" data-max-size="10000"/>
+      		<br>
+      		<input id="profileForm_name" class="edit_form"type="text"  placeholder="Name" />
+      		<input id="profileForm_location" class="edit_form"type="text" placeholder="Location" />
+			<input id="profileForm_bio" class="edit_form"type="text" placeholder="Bio" />	
+		</form>
+
+		<input id = "userId" value="{{user._id}}" type="hidden" />
+		<button class="profileAdd_toggle">Add</button>
+    </div>
+  </div>
+  <!-- /.modal-body -->
+</div>
+<!-- /.modal -->
+<!-- END MODAL CONTENT SAMPLE -->
 
 	<div class="feed_footer">
 		<div class="footer_feed">
