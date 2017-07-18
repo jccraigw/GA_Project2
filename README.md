@@ -1,6 +1,10 @@
 # GA_Project2
 
 WANDERLYST TRAVEL PHOTO APPLICATION - WDI PROJECT 2
+Test the application here! - https://wlyst.herokuapp.com/
+Use the following information to login:
+Email: justin@gmail.com
+Password: test
 
 ## User Stories
 
