@@ -1,6 +1,6 @@
 # GA_Project2
 
-WANDERLYST PHOTO SHARING SOCIAL MEDIA APPLICATION - WDI PROJECT 2
+WANDERLYST - PHOTO SHARING SOCIAL MEDIA APPLICATION - WDI PROJECT 2
 
 - Test the application here! - https://wlyst.herokuapp.com/
 - Use the following information to login:
