@@ -503,11 +503,10 @@ hr {
   padding: 0;
 }
 .comment_input {
-  height: 100px;
+  height: 100%;
   width: 100%;
   background-color: white;
-  margin-bottom: 15px;
-  left: 0;
+  margin-bottom: 60px;
   text-align: center;
   outline: none;
 }
@@ -528,6 +527,7 @@ button:focus {
   border: 1px solid #4c87e0;
   margin-top: 10px;
   height: 30px;
+  margin-bottom: 30px;
   background-color: #4c87e0;
   color: white;
 }
@@ -563,6 +563,7 @@ button:focus {
   padding-left: 20px;
   margin-top: 10px;
   margin-bottom: 60px;
+  width: 90%;
 }
 .post_details a:link {
   color: black;
@@ -722,4 +723,12 @@ h2 {
   height: 30px;
   background-color: #4c87e0;
   color: white;
+}
+textarea {
+  width: 200px;
+  resize: none;
+  overflow: hidden;
+  font-size: 14px;
+  height: 1.1em;
+  padding: 2px;
 }
