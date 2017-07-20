@@ -6,8 +6,6 @@ var express = require('express'),
     session = require('express-session'),
 	bodyParser = require('body-parser'),
 	path = require('path');
-
-
 //connect to database
 require('./db/db.js');
 
@@ -29,8 +27,6 @@ app.use(session({
 		resave: false,
 		saveUninitialized: true,
 		cookie: {secure: false}
-
-
 }));
 
 //connect to the controllers
@@ -49,7 +45,6 @@ var port = process.env.PORT || 3000;
 server.listen(port, function(){
 	console.log("listening on port " + port);
 })
-//server.listen(3000)
-// server.listen(process.env.PORT)
+
 
 

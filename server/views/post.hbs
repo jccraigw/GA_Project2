@@ -1,28 +1,19 @@
 
 <div class="post-hbs">
 	<div class="feed_header">
-	<a class="back_button" href="/{{post.userid}}"><i id="comment"class="material-icons">arrow_back</i></a>
-			
+	<a class="back_button" href="/{{post.userid}}"><i id="comment"class="material-icons">arrow_back</i></a>		
 		<h4>{{post.username}}</h4>
 	{{#if current}} 
 		<div class="edit_wrapper">
-			{{!-- <form class="descr">
-				<input class="description" type="text" />
-			</form> --}}
 			<input class = "postId" value="{{post._id}}" type="hidden" />
 			<button class="descriptionEdit_toggle" data-toggle="modal" data-target="#lab-slide-bottom-popup">edit</button>
-			{{!-- <input class = "postId" value="{{this._id}}" type="" />
-			<button class="descriptionAdd_toggle">Add</button> --}}
 		</div>
 	{{else}}	
 	{{/if}}
 	</div>	
 	<div class="post_wrapper">
 		<img id="image_post2" class="image_post2" src="{{post.link}}" >
-
 	</div>
-
-
 	<div class="post_details">
 			<input class = "postId" value="{{post._id}}" type="hidden" />		
 			<button class="like">Like</button>
@@ -34,32 +25,24 @@
 			<br>
 			{{post.createdAt}}
 	</div>
-
-
 	<!-- MODAL CONTENT SAMPLE STARTS HERE -->
-<div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
-  <div class="lab-modal-body">
-    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>    
-    <div class="text-center">
-    	<h1>Edit</h1>
-      
-      	<form class="descr">
-			{{!-- <input class="description" type="text" /> --}}
-			<textarea  class="description" type="text"></textarea>
-		</form>
-
-		<input class = "postId" value="{{post._id}}" type="hidden" />
-		<button class="descriptionAdd_toggle">Add</button>
-    </div>
-  </div>
-  <!-- /.modal-body -->
-</div>
+	<div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
+	  <div class="lab-modal-body">
+	    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>    
+	    <div class="text-center">
+	    	<h1>Edit</h1>    
+	      	<form class="descr">
+				{{!-- <input class="description" type="text" /> --}}
+				<textarea  class="description" type="text"></textarea>
+			</form>
+			<input class = "postId" value="{{post._id}}" type="hidden" />
+			<button class="descriptionAdd_toggle">Add</button>
+	    </div>
+	  </div>
+	  <!-- /.modal-body -->
+	</div>
 <!-- /.modal -->
 <!-- END MODAL CONTENT SAMPLE -->
-
-
-	
-
 	<div class="feed_footer">
 		<div class="footer_feed">
 			<a href="/feed"><i class="material-icons">home</i></a>
@@ -67,25 +50,21 @@
 		<div class="footer_search">
 				<a href="/search"><i class="material-icons">search</i></a>
 		</div>
-	
 		<div class="footer_profile">
 			<a href="/{{currentid}}"><i class="material-icons">person</i></a>
 		</div>
 		<div class="footer_logout">
 			<a href='#' data-toggle="modal" data-target="#lab-slide-bottom-popup2"><i class="material-icons">close</i></a>
 		</div>
-
 		<!-- MODAL CONTENT SAMPLE STARTS HERE -->
 		<div class="modal fade" id="lab-slide-bottom-popup2" data-keyboard="false" data-backdrop="false">
 		  <div class="lab-modal-body2">
 		    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>    
 		    <div class="text-center">
 		    	<h1>Log Out</h1>
-		      	<br>
-		      	
-		      			<a href="/logout"><button type="button">Yes</button>	</a>
-		      			<button type="button" data-dismiss="modal">No</button>
-				
+		      	<br>	      	
+		      	<a href="/logout"><button type="button">Yes</button>	</a>
+		      	<button type="button" data-dismiss="modal">No</button>	
 		    </div>
 		  </div>
 		  <!-- /.modal-body -->
@@ -93,5 +72,4 @@
 		<!-- /.modal -->
 		<!-- END MODAL CONTENT SAMPLE -->
 	</div>
-
 </div>

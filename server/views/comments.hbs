@@ -1,43 +1,33 @@
 <div class='comments-hbs'>
-
 	<div class="feed_header">
 		<a class="back_button" href="/post/{{post._id}}"><i id="comment"class="material-icons">arrow_back</i></a>
-	
 		<h2>Comments</h2>
 	</div>	
-		
-	
 	<div class='comment-container'>
 		<ul>
-			{{#each post.comments}}
-				
+			{{#each post.comments}}		
 				<li>{{text}}</li>
-
 			{{/each}}
 		</ul>
 	</div>
-
 	<div class="comment_input">
 		<input id="postId_comment" value="{{post._id}}" type="hidden">
 		<form action="/comment/{{post._id}}" method="POST">
 			<div class="comment_text_border">
-{{!-- 			<input class="comment_text" name="text" placeholder="Type your comment here"style="width: 300px;"/>
- --}}			<textarea class="comment_text" name="text" placeholder="Type your comment here"style="width: 300px;"></textarea>
+			<textarea class="comment_text" name="text" placeholder="Type your comment here"style="width: 300px;"></textarea>
 			</div>
 			<button class="comment_submit">Submit</button>
 		</form>
 	</div>
-
 	<div class="feed_footer">
 		<div class="footer_feed">
 			<a href="/feed"><i class="material-icons">home</i></a>
 		</div>
 		<div class="footer_search">
-				<a href="/search"><i class="material-icons">search</i></a>
+			<a href="/search"><i class="material-icons">search</i></a>
 		</div>
 		<div class="footer_profile">
 			<a href="/{{userid}}"><i class="material-icons">person</i></a>
 		</div>
 	</div>
-
 </div>

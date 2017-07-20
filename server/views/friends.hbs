@@ -1,27 +1,19 @@
 <div class='friends-hbs'>
 	<div class="profile_header">
 		<a class="back_button" href="/{{user._id}}"><i id="comment"class="material-icons">arrow_back</i></a>
-
 		<h3>Friends</h3>
 	</div>	
-
-
 		<hr>
 		<div class="friends_list">
 		{{#each user.friends}}
 				<ul>
-
 					<li>
 					<img id="friends_pic" src="{{this.image}}" width="40" height="40">
-
 					<a href="/{{_id}}">{{name}}</a>
-
-
 					</li>	
 				</ul>
 		{{/each}}
 		</div>
-
 	<div class="feed_footer">
 		<div class="footer_feed">
 			<a href="/feed"><i class="material-icons">home</i></a>

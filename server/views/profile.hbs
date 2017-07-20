@@ -5,11 +5,8 @@
 		<button class="profileEdit_toggle" data-toggle="modal" data-target="#lab-slide-bottom-popup">edit	</button>
 		{{else}}
 		{{/if}}
-
 	</div>	
-
-	<div id='user-info'>
-		
+	<div id='user-info'>	
 		<div class="bio_main">
 			<div class="bio_picture">
 			<img class="profilePic" src="{{user.image}}" width="90" height="90">	
@@ -19,90 +16,63 @@
 					<a href="/{{user._id}}/friends">Friends</a>
 						{{#if current}}
 					{{else}}
-					{{!-- 	<div id='button-container'> --}}
 							<input id = "userId" value="{{user._id}}" type="hidden" />
 							<button id="add" class='profile-button'>Add</button>
 							<button id="remove" class='profile-button'>Remove</button>
-						{{!-- </div> --}}
 					{{/if}}
 				</div>
 				<div class="bio_add_remove">
-
 					<p><i class="material-icons">place</i> {{user.location}}</p>
-	 			
 				</div>
 			</div>
 		</div>
 		<div class="bio_text">
-
-			
-
 				<p>{{user.bio}}</p>
-
 		</div>
 		<div class="bio_border"></div>
 	</div>
-
 	<div class="images_wrapper">
-
 		{{#each user.posts}}
 		<div class="image_pics">
-			
-
-
-				<a href="/post/{{this._id}}">
-
-					
-							<img class="image_post" src="{{this.link}}" width="30" height="30" >
-					
-						
-	
-					</a>
-
-
-
-			
+			<a href="/post/{{this._id}}">
+				<img class="image_post" src="{{this.link}}" width="30" height="30" >
+			</a>	
 		</div>
-
 		{{/each}} 
-		
-		
-	
 	</div>
 
-		<!-- MODAL CONTENT SAMPLE STARTS HERE -->
-<div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
-  <div class="lab-modal-body">
-    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>    
-    <div class="text-center">
-    	<h1>Edit Profile</h1>
-      	<br>
-      	<form class="descr">
-      		<input id='profileImage'type="file" class="imgur" accept="image/*" data-max-size="10000"/>
-      		<span id="gear"><button class="edit_profile_button">change profile picture</button></span>
-      		<br>
-      		<br>
-      		<input id="profileForm_name" class="edit_form"type="text"  placeholder="Name" />
-      		<input id="profileForm_location" class="edit_form"type="text" placeholder="Location" />
-			{{!-- <input id="profileForm_bio" class="edit_form"type="text" placeholder="Bio" /> --}}
-			<textarea id="profileForm_bio" class="edit_form"type="text" placeholder="Bio"></textarea>	
-		</form>
-
-		<input id = "userId" value="{{user._id}}" type="hidden" />
-		<button class="profileAdd_toggle">Add</button>
-    </div>
-  </div>
-  <!-- /.modal-body -->
-</div>
-<!-- /.modal -->
-<!-- END MODAL CONTENT SAMPLE -->
+	<!-- MODAL CONTENT SAMPLE STARTS HERE -->
+	<div class="modal fade" id="lab-slide-bottom-popup" data-keyboard="false" data-backdrop="false">
+	  <div class="lab-modal-body">
+	    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>    
+	    <div class="text-center">
+	    	<h1>Edit Profile</h1>
+	      	<br>
+	      	<form class="descr">
+	      		<input id='profileImage'type="file" class="imgur" accept="image/*" data-max-size="10000"/>
+	      		<span id="gear"><button class="edit_profile_button">change profile picture</button></span>
+	      		<br>
+	      		<br>
+	      		<input id="profileForm_name" class="edit_form"type="text"  placeholder="Name" />
+	      		<input id="profileForm_location" class="edit_form"type="text" placeholder="Location" />
+				{{!-- <input id="profileForm_bio" class="edit_form"type="text" placeholder="Bio" /> --}}
+				<textarea id="profileForm_bio" class="edit_form"type="text" placeholder="Bio"></textarea>	
+			</form>
+			<input id = "userId" value="{{user._id}}" type="hidden" />
+			<button class="profileAdd_toggle">Add</button>
+	    </div>
+	  </div>
+	  <!-- /.modal-body -->
+	</div>
+	<!-- /.modal -->
+	<!-- END MODAL CONTENT SAMPLE -->
 
 	<div class="feed_footer">
 		<div class="footer_feed">
 			<a href="/feed"><i class="material-icons">home</i></a>
 		</div>
 		<div class="footer_search">
-				<a href="/search"><i class="material-icons">search</i></a>
+			<a href="/search"><i class="material-icons">search</i></a>
 		</div>
 		<div class="footer_upload">
 			{{#if current}}
@@ -116,7 +86,6 @@
 				</form>
 		{{else}}
 		{{/if}}
-
 		</div>
 		<div class="footer_profile">
 			<a href="/{{userid}}"><i class="material-icons">person</i></a>
@@ -132,20 +101,15 @@
 		    <div class="text-center">
 		    	<h1>Log Out</h1>
 		      	<br>
-		      	
-		      			<a href="/logout"><button type="button">Yes</button>	</a>
-		      			<button type="button" data-dismiss="modal">No</button>
-				
+		      	<a href="/logout"><button type="button">Yes</button>	</a>
+		      	<button type="button" data-dismiss="modal">No</button>
 		    </div>
 		  </div>
 		  <!-- /.modal-body -->
 		</div>
 		<!-- /.modal -->
 		<!-- END MODAL CONTENT SAMPLE -->
-	</div>
-
-
-			
+	</div>			
 </div>	
 
 
