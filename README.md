@@ -4,7 +4,7 @@ WANDERLYST - PHOTO SHARING SOCIAL MEDIA APPLICATION - WDI PROJECT 2
 
 - Test the application here! - https://wlyst.herokuapp.com/
 - Use the following information to login:
-- Email: justin@gmail.com
+- Email: test@test.com
 - Password: test
 
 ## User Stories
@@ -46,7 +46,8 @@ Links will be uploaded later with the pictures of wireframes.
 
 ## What Is Unfinished?
 
-1. Making the images in the profile editable.
-2. Randomizing the feed.
-3. Mobile version.
-4. Making the bio and other profile features editable.
+1. refine features
+2. check for empty fields on forms
+3. Mobile app version.
+4. parse created date for cleaner date on post
+5. create csv file for seeding application
