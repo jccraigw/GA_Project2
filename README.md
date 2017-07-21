@@ -11,9 +11,6 @@ WANDERLYST - PHOTO SHARING SOCIAL MEDIA APPLICATION - WDI PROJECT 2
 
 HOME PAGE 
 - As a end user I want to be able to sign into my account using my username/email and password.
-- As a end user I want to be able to read details about the application.
-- As a end user I want to be able to look up helpful information regarding usage of the app.
-- As a end user I want to be able to contact *APP NAME* if needed.
 
 IMAGE FEED PAGE
 - As a end user I want to be able to scroll through images, like images, and comment on images. 
