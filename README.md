@@ -16,7 +16,7 @@ HOME PAGE
 - As a end user I want to be able to contact *APP NAME* if needed.
 
 IMAGE FEED PAGE
-- As a end user I want to be able to scroll through images, like images, and comment on images. *NEED TO FIGURE OUT POINT SYSTEM*
+- As a end user I want to be able to scroll through images, like images, and comment on images. 
 - As a end user I want to be able to navigate to and from the feed and my profile page
 
 PROFILE PAGE
