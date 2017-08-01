@@ -15,6 +15,9 @@ html {
     overflow-x: hidden;
   }
 }
+h1 {
+  margin-top: 50px;
+}
 .home-hbs {
   display: flex;
   flex-direction: column;
